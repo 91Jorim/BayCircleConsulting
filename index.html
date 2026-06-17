@@ -43,9 +43,11 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .problem-card strong { display: block; font-size: 0.82rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
 .problem-card p { font-size: 0.88rem; font-weight: 300; color: var(--body); line-height: 1.7; }
 
-/* ── Global max-width constraint ── */
-body { background: var(--navy); } /* fills sides on wide screens with nav color */
-.site { max-width: 1600px; margin: 0 auto; box-shadow: 0 0 0 1px rgba(200,169,110,0.08); }
+/* ── Global max-width: content inside sections, backgrounds bleed full width ── */
+.inner { max-width: 1400px; margin-left: auto; margin-right: auto; width: 100%; }
+/* Grid sections need inner to pass through as display:contents so the grid still works */
+.positioning-section > .inner,
+.contact-body > .inner { display: contents; }
 
 /* ── How It Works – linear strip ── */
 .how-it-works { background: var(--navy-mid); padding: 2.6rem 3rem; border-top: 1px solid rgba(200,169,110,0.15); border-bottom: 1px solid rgba(200,169,110,0.15); }
@@ -196,15 +198,13 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
 </style>
 
 <div class="site">
-<nav class="nav">
-  <div class="nav-logo" onclick="navigate('home')">Bay Circle Consulting</div>
+<nav class="nav"><div class="inner" style="display:flex;justify-content:space-between;align-items:center;width:100%;"><div class="nav-logo" onclick="navigate('home')">Bay Circle Consulting</div>
   <div class="nav-links">
     <a onclick="navigate('method')" data-page="method">The Method</a>
     <a onclick="navigate('casestudy')" data-page="casestudy">Case Study</a>
     <a onclick="navigate('about')" data-page="about">About</a>
     <a onclick="navigate('contact')" data-page="contact">Contact</a>
-  </div>
-</nav>
+  </div></div></nav>
 
 <!-- ═══════════ HOME ═══════════ -->
 <div class="page-view active" id="page-home">
@@ -221,17 +221,15 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
     <div class="hero-canvas-wrap"><canvas id="systemMap"></canvas></div>
   </section>
 
-  <div class="belief-strip"><p>"You cannot improve what you cannot see. Clarity comes before change."</p></div>
+  <div class="belief-strip"><div class="inner"><p>"You cannot improve what you cannot see. Clarity comes before change."</p></div></div>
 
-  <section class="section" id="home-problems" style="background:var(--linen);">
-    <div class="section-label">The problem</div>
+  <section class="section" id="home-problems" style="background:var(--linen);"><div class="inner"><div class="section-label">The problem</div>
     <h2 class="section-heading">Organizations don't break overnight.<br>They drift.</h2>
     <p class="section-body">Good people. Clear intentions. Hard work. And still the same problems recur, the same bottlenecks reappear, the same miscommunications stall progress. The issue is rarely the people. It's the invisible systems surrounding them: unclear ownership, undocumented assumptions, gaps between how work is supposed to flow and how it actually does.</p>
-    <p class="section-body" style="margin-top:1.2rem;">Bay Circle doesn't assign blame. We reveal the terrain.</p>
+    <p class="section-body" style="margin-top:1.2rem;">Bay Circle doesn't assign blame. We reveal the terrain.</p></div>
   </section>
 
-  <section class="problems-section">
-    <div class="section-label">Sound familiar?</div>
+  <section class="problems-section"><div class="inner"><div class="section-label">Sound familiar?</div>
     <h2 class="section-heading">Signs your organization has<br>a visibility problem</h2>
     <div class="problems-grid">
       <div class="problem-card"><strong>Growth-related chaos</strong><p>Everything used to fit in a few conversations. Now work falls through the cracks, priorities collide, and leaders spend more time reacting than planning.</p></div>
@@ -241,11 +239,10 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
       <div class="problem-card"><strong>Communication breakdowns</strong><p>Leadership believes one thing is happening. Employees experience something different. Everyone is acting on incomplete information, and nobody realizes it until something breaks.</p></div>
       <div class="problem-card"><strong>Execution gaps</strong><p>The meeting was productive. Everyone agreed on next steps. A month later, very little has changed and nobody can explain exactly why.</p></div>
       <div class="problem-card"><strong>Firefighting culture</strong><p>Every day feels urgent. Managers spend more time responding to problems than preventing them. The organization becomes highly reactive, even when everyone is working hard.</p></div>
-    </div>
+    </div></div>
   </section>
 
-  <section class="how-it-works">
-    <div class="how-it-works-label">How this works</div>
+  <section class="how-it-works"><div class="inner"><div class="how-it-works-label">How this works</div>
     <div class="hiw-steps">
       <div class="hiw-step">
         <div class="hiw-step-num">01</div>
@@ -270,11 +267,10 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
         <div class="hiw-step-title">Build lasting clarity</div>
         <div class="hiw-step-desc">You leave with the ability to see and improve your systems independently</div>
       </div>
-    </div>
+    </div></div>
   </section>
 
-  <section class="pillars-teaser">
-    <div class="section-label">The Seven Pillars</div>
+  <section class="pillars-teaser"><div class="inner"><div class="section-label">The Seven Pillars</div>
     <h2 class="section-heading" style="color:var(--linen);">Every organization evaluated<br>through one framework</h2>
     <p class="section-body">The Seven Pillars of Invisible Management are the diagnostic lens Bay Circle brings to every engagement and the same framework at the heart of the book <em style="color:var(--gold-light)">The Invisible Work of Management.</em></p>
     <div class="pillars-grid">
@@ -289,8 +285,7 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
     <div class="pillars-cta"><button class="btn-outline-gold" onclick="navigate('method')">Explore the full framework →</button></div>
   </section>
 
-  <section class="positioning-section">
-    <div>
+  <section class="positioning-section"><div class="inner" style="display:contents;"><div>
       <div class="section-label">Why Bay Circle</div>
       <h2 class="section-heading">We sell clarity,<br>not solutions</h2>
       <p class="section-body">Most consultants arrive with answers. Bay Circle arrives with better questions and a framework for making your organization's hidden terrain legible to the people who have to navigate it.</p>
@@ -304,23 +299,21 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
     </div>
   </section>
 
-  <footer class="footer">
-    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
+  <footer class="footer"><div class="inner" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;width:100%;"><div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
   </footer>
 </div>
 
 <!-- ═══════════ THE METHOD ═══════════ -->
 <div class="page-view" id="page-method">
-  <div class="method-hero">
-    <div class="section-label">The Method</div>
+  <div class="method-hero"><div class="inner"><div class="section-label">The Method</div>
     <h1 class="method-hero-headline">The Seven Pillars of<br><em>Invisible Management</em></h1>
     <p class="method-hero-sub">Most organizations try to solve problems before they understand them. The Seven Pillars are a diagnostic framework for seeing an organization clearly, not as it is documented, but as it actually operates. Every Bay Circle engagement is a guided application of this framework. Every chapter of the book is an exploration of one pillar.</p>
     <div class="method-hero-book"><span>Framework also explored in</span><strong>The Invisible Work of Management</strong></div>
-    <span class="method-hero-case" onclick="navigate('casestudy')">See where this came from — the origin case study →</span>
+    <span class="method-hero-case" onclick="navigate('casestudy')">See where this came from — the origin case study →</span></div>
   </div>
 
-  <div class="pillar-full">
+  <div class="pillar-full"><div class="inner">
     <div class="pillar-block">
       <div class="pb-num">1</div>
       <div>
@@ -432,7 +425,7 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
         <p class="pb-purpose">Purpose: Build the organizational capacity to keep improving so Bay Circle becomes unnecessary.</p>
       </div>
     </div>
-  </div>
+  </div></div>
 
   <div class="method-cta-section">
     <h2 class="section-heading">Ready to see your organization clearly?</h2>
@@ -440,9 +433,8 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
     <button class="btn-primary" onclick="navigate('contact')">Start a conversation</button>
   </div>
 
-  <footer class="footer">
-    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
+  <footer class="footer"><div class="inner" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;width:100%;"><div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
   </footer>
 </div>
 
@@ -567,7 +559,7 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
       <p>"When those structures become visible, execution becomes more consistent, not because effort increases, but because friction decreases."</p>
       <p class="small">The Seven Pillars exist to make that structure visible enough to work with deliberately.</p>
     </div>
-  </div>
+  </div></div>
 
   <div class="method-cta-section">
     <h2 class="section-heading">See what's invisible in your organization</h2>
@@ -575,9 +567,8 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
     <button class="btn-primary" onclick="navigate('contact')">Start a conversation</button>
   </div>
 
-  <footer class="footer">
-    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
+  <footer class="footer"><div class="inner" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;width:100%;"><div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
   </footer>
 </div>
 
@@ -588,8 +579,7 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
     <h1 class="about-hero-headline">Built on the belief that<br><em style="font-style:italic;color:var(--gold-light)">clarity precedes change</em></h1>
     <p class="about-hero-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
   </div>
-  <div class="about-body">
-    <div class="section-label">The founder</div>
+  <div class="about-body"><div class="inner"><div class="section-label">The founder</div>
     <h2 class="section-heading">Placeholder — your story goes here</h2>
     <div class="about-grid">
       <div>
@@ -600,8 +590,7 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
       <div class="about-photo-placeholder"><span>Photo placeholder</span></div>
     </div>
   </div>
-  <div class="about-values">
-    <div class="section-label">What we believe</div>
+  <div class="about-values"><div class="inner"><div class="section-label">What we believe</div>
     <h2 class="section-heading">The principles behind the work</h2>
     <div class="values-grid">
       <div><div class="value-num">01</div><div class="value-title">Clarity before change</div><div class="value-body">No organization should try to fix what it cannot yet see. Understanding must come before intervention.</div></div>
@@ -620,21 +609,18 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
     </div>
   </div>
 
-  <footer class="footer">
-    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
+  <footer class="footer"><div class="inner" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;width:100%;"><div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
   </footer>
 </div>
 
 <!-- ═══════════ CONTACT ═══════════ -->
 <div class="page-view" id="page-contact">
-  <div class="contact-hero">
-    <div class="section-label">Get in touch</div>
+  <div class="contact-hero"><div class="inner"><div class="section-label">Get in touch</div>
     <h1 class="contact-hero-headline">The first conversation<br><em style="font-style:italic;color:var(--gold-light)">is about your situation</em></h1>
     <p class="contact-hero-sub">Not a sales call. Not a proposal. Just an honest conversation about what's happening in your organization and whether Bay Circle can help you see it more clearly.</p>
   </div>
-  <div class="contact-body">
-    <div>
+  <div class="contact-body"><div class="inner" style="display:contents;"><div>
       <div id="contact-form-area">
         <div class="form-row"><label class="form-label">Your name</label><input class="form-input" type="text" id="cf-name" placeholder="First and last name"></div>
         <div class="form-row"><label class="form-label">Organization</label><input class="form-input" type="text" placeholder="Company or organization name"></div>
@@ -677,9 +663,8 @@ body { background: var(--navy); } /* fills sides on wide screens with nav color 
       </div>
     </div>
   </div>
-  <footer class="footer">
-    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
+  <footer class="footer"><div class="inner" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;width:100%;"><div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
   </footer>
 </div>
 
