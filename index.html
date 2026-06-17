@@ -12,14 +12,12 @@ body { background: transparent; }
 .page-view { display: none; }
 .page-view.active { display: block; }
 
-/* NAV */
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--navy); position: sticky; top: 0; z-index: 100; }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--gold-light); letter-spacing: 0.04em; cursor: pointer; }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a { font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
 
-/* HERO */
 .hero { background: var(--navy); min-height: 560px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 3rem 3rem 4rem; gap: 3rem; overflow: hidden; }
 .hero-eyebrow { font-size: 0.7rem; font-weight: 400; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.4rem; }
 .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem,5vw,3.6rem); font-weight: 300; color: #F5F2EC; line-height: 1.12; margin-bottom: 1.6rem; }
@@ -32,38 +30,51 @@ body { background: transparent; }
 .hero-canvas-wrap { position: relative; height: 380px; }
 canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
-/* BELIEF */
 .belief-strip { background: var(--navy-mid); padding: 2rem 3rem; border-top: 1px solid rgba(200,169,110,0.2); border-bottom: 1px solid rgba(200,169,110,0.2); }
 .belief-strip p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; font-style: italic; color: var(--gold-light); text-align: center; line-height: 1.6; }
 
-/* SECTIONS */
 .section { padding: 4.5rem 3rem; }
 .section-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.2rem; }
 .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,3.5vw,2.5rem); font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 1.2rem; }
 .section-body { font-size: 0.95rem; font-weight: 300; color: var(--body); line-height: 1.85; max-width: 580px; }
 
-/* PROBLEMS */
 .problems-section { background: white; padding: 4.5rem 3rem; }
 .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 1.5rem; margin-top: 2.8rem; }
 .problem-card { border-left: 2px solid var(--gold); padding: 1.2rem 1.4rem; background: var(--linen); }
 .problem-card strong { display: block; font-size: 0.82rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
 .problem-card p { font-size: 0.88rem; font-weight: 300; color: var(--body); line-height: 1.7; }
 
-/* HOME METHOD STRIP */
+/* ── METHOD SECTION — OPTION B ── */
 .method-section { background: var(--navy); padding: 4.5rem 3rem; }
 .method-section .section-heading { color: var(--linen); }
-.method-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 0; margin-top: 3rem; border: 1px solid rgba(200,169,110,0.2); }
-.method-step { padding: 1.8rem 1.4rem; border-right: 1px solid rgba(200,169,110,0.15); cursor: pointer; transition: background 0.2s; }
-.method-step:hover { background: rgba(200,169,110,0.05); }
-.method-step:last-child { border-right: none; }
-.step-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: rgba(200,169,110,0.3); line-height: 1; margin-bottom: 0.7rem; }
-.step-title { font-size: 0.8rem; font-weight: 500; color: var(--gold-light); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
-.step-desc { font-size: 0.78rem; font-weight: 300; color: rgba(245,242,236,0.5); line-height: 1.65; }
+.steps-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(200,169,110,0.15);
+  margin-top: 3rem;
+}
+.s2c-card {
+  background: var(--navy);
+  padding: 1.8rem 1.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.s2c-card:hover { background: rgba(255,255,255,0.02); }
+.s2c-card.full {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.s2c-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: rgba(200,169,110,0.25); line-height: 1; margin-bottom: 0.7rem; }
+.s2c-card.full .s2c-num { margin-bottom: 0; min-width: 2.5rem; }
+.s2c-title { font-size: 0.8rem; font-weight: 500; color: var(--gold-light); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.s2c-desc { font-size: 0.82rem; font-weight: 300; color: rgba(245,242,236,0.5); line-height: 1.65; }
 .method-cta { text-align: center; margin-top: 2.5rem; }
 .btn-outline-gold { background: transparent; border: 1px solid rgba(200,169,110,0.5); color: var(--gold-light); padding: 0.75rem 2rem; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
 .btn-outline-gold:hover { border-color: var(--gold); color: var(--gold); }
 
-/* POSITIONING */
 .positioning-section { background: var(--linen); padding: 4.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .differentiator { border-top: 2px solid var(--sand); padding-top: 1.5rem; margin-top: 1.5rem; }
 .diff-row { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
@@ -72,7 +83,6 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .label-us { background: var(--navy); color: var(--gold-light); }
 .diff-text { font-size: 0.86rem; font-weight: 300; color: var(--body); line-height: 1.6; }
 
-/* FOOTER */
 .footer { background: var(--navy); padding: 3rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; border-top: 1px solid rgba(200,169,110,0.2); }
 .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--gold-light); }
 .footer-tagline { font-size: 0.78rem; font-weight: 300; color: rgba(245,242,236,0.4); margin-top: 0.4rem; }
@@ -80,7 +90,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .footer-cta { background: transparent; border: 1px solid rgba(200,169,110,0.4); color: var(--gold-light); padding: 0.75rem 2rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
 .footer-cta:hover { border-color: var(--gold); color: var(--gold); }
 
-/* ── ABOUT PAGE ── */
+/* ── ABOUT ── */
 .about-hero { background: var(--navy); padding: 5rem 3rem 4rem; }
 .about-hero .section-label { color: var(--gold); }
 .about-hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 300; color: var(--linen); line-height: 1.15; margin-bottom: 1.5rem; }
@@ -92,7 +102,6 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .lorem-block { font-size: 0.93rem; font-weight: 300; color: var(--body); line-height: 1.9; margin-bottom: 1.4rem; }
 .about-values { background: white; padding: 4.5rem 3rem; }
 .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; margin-top: 3rem; }
-.value-item { }
 .value-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: rgba(200,169,110,0.4); line-height: 1; margin-bottom: 0.6rem; }
 .value-title { font-size: 0.85rem; font-weight: 500; color: var(--navy); letter-spacing: 0.04em; margin-bottom: 0.5rem; }
 .value-body { font-size: 0.85rem; font-weight: 300; color: var(--body); line-height: 1.75; }
@@ -106,25 +115,23 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .method-step-full { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 4rem 0; border-bottom: 1px solid var(--sand); align-items: start; }
 .method-step-full:last-child { border-bottom: none; }
 .msf-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: rgba(200,169,110,0.35); line-height: 1; padding-top: 0.2rem; }
-.msf-content { }
 .msf-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem; }
 .msf-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 1.2rem; }
 .msf-body { font-size: 0.93rem; font-weight: 300; color: var(--body); line-height: 1.9; margin-bottom: 1.2rem; max-width: 640px; }
 .msf-tools { margin-top: 1.5rem; }
 .msf-tools-label { font-size: 0.7rem; font-weight: 500; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
 .tool-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.tool-chip { background: var(--sand); color: var(--navy); font-size: 0.75rem; font-weight: 400; padding: 0.3rem 0.8rem; letter-spacing: 0.03em; }
+.tool-chip { background: var(--sand); color: var(--navy); font-size: 0.75rem; font-weight: 400; padding: 0.3rem 0.8rem; }
 .method-cta-section { background: var(--navy-mid); padding: 4rem 3rem; text-align: center; }
 .method-cta-section .section-heading { color: var(--linen); margin-bottom: 1rem; }
 .method-cta-section .section-body { color: rgba(245,242,236,0.6); margin: 0 auto 2rem; }
 
-/* ── CONTACT PAGE ── */
+/* ── CONTACT ── */
 .contact-hero { background: var(--navy); padding: 5rem 3rem 4rem; }
 .contact-hero .section-label { color: var(--gold); }
 .contact-hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 300; color: var(--linen); line-height: 1.15; margin-bottom: 1rem; }
 .contact-hero-sub { font-size: 0.95rem; font-weight: 300; color: rgba(245,242,236,0.6); line-height: 1.85; max-width: 540px; }
 .contact-body { padding: 4.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.contact-form-wrap { }
 .form-row { margin-bottom: 1.5rem; }
 .form-label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
 .form-input, .form-select, .form-textarea { width: 100%; background: white; border: 1px solid var(--sand); padding: 0.75rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 300; color: var(--body); outline: none; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; border-radius: 0; }
@@ -133,12 +140,11 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .form-submit { background: var(--gold); color: var(--navy); border: none; padding: 0.85rem 2.5rem; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em; cursor: pointer; text-transform: uppercase; transition: background 0.2s; width: 100%; margin-top: 0.5rem; }
 .form-submit:hover { background: var(--gold-light); }
 .form-note { font-size: 0.75rem; font-weight: 300; color: var(--muted); margin-top: 0.8rem; text-align: center; line-height: 1.6; }
-.contact-aside { }
 .aside-block { margin-bottom: 3rem; }
 .aside-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1rem; }
 .aside-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--navy); margin-bottom: 0.8rem; }
 .aside-body { font-size: 0.88rem; font-weight: 300; color: var(--body); line-height: 1.8; margin-bottom: 1.2rem; }
-.btn-cal { display: block; background: var(--navy); color: var(--gold-light); text-align: center; padding: 0.85rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; border: none; width: 100%; }
+.btn-cal { display: block; background: var(--navy); color: var(--gold-light); text-align: center; padding: 0.85rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; border: none; width: 100%; transition: background 0.2s; }
 .btn-cal:hover { background: var(--navy-mid); }
 .form-success { display: none; background: var(--linen); border: 1px solid rgba(200,169,110,0.4); padding: 2rem; text-align: center; }
 .form-success.show { display: block; }
@@ -148,7 +154,6 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
 <div class="site">
 
-  <!-- NAV -->
   <nav class="nav" id="main-nav">
     <div class="nav-logo" onclick="navigate('home')">Bay Circle Consulting</div>
     <div class="nav-links">
@@ -158,9 +163,8 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
     </div>
   </nav>
 
-  <!-- ══════════════════════════════ HOME ══════════════════════════════ -->
+  <!-- HOME -->
   <div class="page-view active" id="page-home">
-
     <section class="hero">
       <div>
         <div class="hero-eyebrow">Organizational Clarity</div>
@@ -171,20 +175,18 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
           <button class="btn-ghost" onclick="scrollToId('home-problems')">How it works ↓</button>
         </div>
       </div>
-      <div class="hero-canvas-wrap">
-        <canvas id="systemMap"></canvas>
-      </div>
+      <div class="hero-canvas-wrap"><canvas id="systemMap"></canvas></div>
     </section>
 
     <div class="belief-strip">
       <p>"You cannot improve what you cannot see. Clarity comes before change."</p>
     </div>
 
-    <section class="section" id="home-problems" style="background: var(--linen);">
+    <section class="section" id="home-problems" style="background:var(--linen);">
       <div class="section-label">The problem</div>
       <h2 class="section-heading">Organizations don't break overnight.<br>They drift.</h2>
       <p class="section-body">Good people. Clear intentions. Hard work. And still — the same problems recur, the same bottlenecks reappear, the same miscommunications stall progress. The issue is rarely the people. It's the invisible systems surrounding them: unclear ownership, undocumented assumptions, gaps between how work is supposed to flow and how it actually does.</p>
-      <p class="section-body" style="margin-top: 1.2rem;">Bay Circle doesn't assign blame. We reveal the terrain.</p>
+      <p class="section-body" style="margin-top:1.2rem;">Bay Circle doesn't assign blame. We reveal the terrain.</p>
     </section>
 
     <section class="problems-section">
@@ -202,15 +204,15 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
     <section class="method-section">
       <div class="section-label">The Bay Circle Method</div>
-      <h2 class="section-heading" style="color: var(--linen);">Seven steps from opacity to clarity</h2>
-      <div class="method-steps">
-        <div class="method-step" onclick="navigate('method')"><div class="step-num">1</div><div class="step-title">Observe</div><div class="step-desc">Understand what is actually happening, not what the org chart says.</div></div>
-        <div class="method-step" onclick="navigate('method')"><div class="step-num">2</div><div class="step-title">Surface</div><div class="step-desc">Gather unfiltered perspectives from all levels of the organization.</div></div>
-        <div class="method-step" onclick="navigate('method')"><div class="step-num">3</div><div class="step-title">Map</div><div class="step-desc">Visualize how work actually flows — dependencies, handoffs, informal paths.</div></div>
-        <div class="method-step" onclick="navigate('method')"><div class="step-num">4</div><div class="step-title">Reveal</div><div class="step-desc">Identify the disconnects between perception and operational reality.</div></div>
-        <div class="method-step" onclick="navigate('method')"><div class="step-num">5</div><div class="step-title">Diagnose</div><div class="step-desc">Determine systemic causes — not symptoms — behind recurring problems.</div></div>
-        <div class="method-step" onclick="navigate('method')"><div class="step-num">6</div><div class="step-title">Align</div><div class="step-desc">Create shared understanding across teams and leadership.</div></div>
-        <div class="method-step" onclick="navigate('method')"><div class="step-num">7</div><div class="step-title">Enable</div><div class="step-desc">Teach the organization to identify and solve problems independently.</div></div>
+      <h2 class="section-heading" style="color:var(--linen);">Seven steps from opacity to clarity</h2>
+      <div class="steps-2col">
+        <div class="s2c-card" onclick="navigate('method')"><div class="s2c-num">1</div><div class="s2c-title">Observe</div><div class="s2c-desc">Understand what is actually happening, not what the org chart says.</div></div>
+        <div class="s2c-card" onclick="navigate('method')"><div class="s2c-num">2</div><div class="s2c-title">Surface</div><div class="s2c-desc">Gather unfiltered perspectives from all levels of the organization.</div></div>
+        <div class="s2c-card" onclick="navigate('method')"><div class="s2c-num">3</div><div class="s2c-title">Map</div><div class="s2c-desc">Visualize how work actually flows — dependencies, handoffs, informal paths.</div></div>
+        <div class="s2c-card" onclick="navigate('method')"><div class="s2c-num">4</div><div class="s2c-title">Reveal</div><div class="s2c-desc">Identify the disconnects between perception and operational reality.</div></div>
+        <div class="s2c-card" onclick="navigate('method')"><div class="s2c-num">5</div><div class="s2c-title">Diagnose</div><div class="s2c-desc">Determine systemic causes — not symptoms — behind recurring problems.</div></div>
+        <div class="s2c-card" onclick="navigate('method')"><div class="s2c-num">6</div><div class="s2c-title">Align</div><div class="s2c-desc">Create shared understanding across teams and leadership.</div></div>
+        <div class="s2c-card full" onclick="navigate('method')"><div class="s2c-num">7</div><div><div class="s2c-title">Enable</div><div class="s2c-desc">Teach the organization to identify and solve problems independently — and continue improving without us.</div></div></div>
       </div>
       <div class="method-cta">
         <button class="btn-outline-gold" onclick="navigate('method')">Explore the full framework →</button>
@@ -222,7 +224,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <div class="section-label">Why Bay Circle</div>
         <h2 class="section-heading">We sell clarity,<br>not solutions</h2>
         <p class="section-body">Most consultants arrive with answers. Bay Circle arrives with better questions — and a method for making your organization's hidden terrain legible to the people who have to navigate it.</p>
-        <p class="section-body" style="margin-top: 1rem;">The goal isn't dependency on us. It's the lasting ability to see, diagnose, and improve your systems on your own terms.</p>
+        <p class="section-body" style="margin-top:1rem;">The goal isn't dependency on us. It's the lasting ability to see, diagnose, and improve your systems on your own terms.</p>
       </div>
       <div>
         <div class="section-label">The difference</div>
@@ -251,192 +253,117 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
       </div>
     </footer>
+  </div>
 
-  </div><!-- /home -->
-
-
-  <!-- ══════════════════════════════ THE METHOD ══════════════════════════════ -->
+  <!-- METHOD PAGE -->
   <div class="page-view" id="page-method">
-
     <div class="method-hero">
       <div class="section-label">The Bay Circle Method</div>
       <h1 class="method-hero-headline">A framework for making<br><em style="font-style:italic;color:var(--gold-light)">invisible systems visible</em></h1>
       <p class="method-hero-sub">Most organizations try to solve problems before they understand them. The Bay Circle Method is a structured approach to seeing an organization clearly — not as it is documented, but as it actually operates. Seven steps from opacity to lasting clarity.</p>
     </div>
-
     <div class="method-full">
-
       <div class="method-step-full">
         <div class="msf-num">1</div>
-        <div class="msf-content">
+        <div>
           <div class="msf-label">Step One</div>
           <h2 class="msf-title">Observe</h2>
           <p class="msf-body">Before any questions are asked or interviews scheduled, the work begins with observation. Most consultants arrive with frameworks already in hand — they fit what they see to the answers they expect. Bay Circle does the opposite. The first step is to enter the organization without an agenda and pay attention to what is actually happening.</p>
           <p class="msf-body">This means watching how meetings actually run (not how they're supposed to run). It means noticing which communication channels people actually use. It means paying attention to the informal authority structures that don't appear on any org chart. The goal of Observe is to build an honest baseline — a picture of the organization as it is, not as leadership believes it to be.</p>
           <p class="msf-body">Most operational dysfunction is visible before a single interview is conducted. Observe trains you to see what most people have stopped noticing.</p>
-          <div class="msf-tools">
-            <div class="msf-tools-label">Techniques used</div>
-            <div class="tool-chips">
-              <span class="tool-chip">Shadow sessions</span>
-              <span class="tool-chip">Meeting observation</span>
-              <span class="tool-chip">Communication channel audit</span>
-              <span class="tool-chip">Informal workflow tracking</span>
-            </div>
-          </div>
+          <div class="msf-tools"><div class="msf-tools-label">Techniques used</div><div class="tool-chips"><span class="tool-chip">Shadow sessions</span><span class="tool-chip">Meeting observation</span><span class="tool-chip">Communication channel audit</span><span class="tool-chip">Informal workflow tracking</span></div></div>
         </div>
       </div>
-
       <div class="method-step-full">
         <div class="msf-num">2</div>
-        <div class="msf-content">
+        <div>
           <div class="msf-label">Step Two</div>
           <h2 class="msf-title">Surface</h2>
           <p class="msf-body">Every organization has three stories: the one leadership tells, the one managers navigate, and the one frontline employees live. These stories are rarely the same. Surface is the structured process of gathering all three — without letting any single perspective dominate.</p>
           <p class="msf-body">This is done through confidential, structured interviews designed not to confirm hypotheses but to uncover them. The questions asked of a CEO are different from those asked of a team lead, which are different from those asked of an individual contributor. Each level sees a different slice of the organization's reality.</p>
           <p class="msf-body">The goal is not to identify who is right — it is to capture the full range of perspectives that shape how the organization actually functions. Disconnects between levels are not failures. They are data. They are where the real system becomes visible.</p>
-          <div class="msf-tools">
-            <div class="msf-tools-label">Techniques used</div>
-            <div class="tool-chips">
-              <span class="tool-chip">Structured interviews</span>
-              <span class="tool-chip">Confidential 1:1 sessions</span>
-              <span class="tool-chip">Level-specific questioning</span>
-              <span class="tool-chip">Perception mapping</span>
-            </div>
-          </div>
+          <div class="msf-tools"><div class="msf-tools-label">Techniques used</div><div class="tool-chips"><span class="tool-chip">Structured interviews</span><span class="tool-chip">Confidential 1:1 sessions</span><span class="tool-chip">Level-specific questioning</span><span class="tool-chip">Perception mapping</span></div></div>
         </div>
       </div>
-
       <div class="method-step-full">
         <div class="msf-num">3</div>
-        <div class="msf-content">
+        <div>
           <div class="msf-label">Step Three</div>
           <h2 class="msf-title">Map</h2>
           <p class="msf-body">Organizations love diagrams. Org charts, process flows, RACI matrices. The problem is that these documents typically represent how someone once hoped work would happen — not how it actually does. Map is the process of creating an honest picture of actual workflow.</p>
           <p class="msf-body">This means tracing how work actually moves through the organization: where it originates, who touches it, where it gets stuck, where it gets quietly rerouted around known dysfunction, and where it disappears into gaps that no one officially owns. The resulting map often looks dramatically different from any documented process.</p>
-          <p class="msf-body">The value of a true workflow map is not aesthetic — it is diagnostic. It makes the invisible visible in a form that a leadership team can look at together, argue over, and ultimately use to make better decisions. A map that generates productive disagreement is doing its job.</p>
-          <div class="msf-tools">
-            <div class="msf-tools-label">Techniques used</div>
-            <div class="tool-chips">
-              <span class="tool-chip">Actual vs. documented process mapping</span>
-              <span class="tool-chip">Handoff analysis</span>
-              <span class="tool-chip">Bottleneck identification</span>
-              <span class="tool-chip">Ownership gap mapping</span>
-            </div>
-          </div>
+          <p class="msf-body">The value of a true workflow map is not aesthetic — it is diagnostic. It makes the invisible visible in a form that a leadership team can look at together, argue over, and ultimately use to make better decisions.</p>
+          <div class="msf-tools"><div class="msf-tools-label">Techniques used</div><div class="tool-chips"><span class="tool-chip">Actual vs. documented process mapping</span><span class="tool-chip">Handoff analysis</span><span class="tool-chip">Bottleneck identification</span><span class="tool-chip">Ownership gap mapping</span></div></div>
         </div>
       </div>
-
       <div class="method-step-full">
         <div class="msf-num">4</div>
-        <div class="msf-content">
+        <div>
           <div class="msf-label">Step Four</div>
           <h2 class="msf-title">Reveal</h2>
           <p class="msf-body">The most important moment in a Bay Circle engagement is not when we deliver a report. It is when we sit with a leadership team and show them what we found — including the things they did not expect to see. Reveal is that moment.</p>
           <p class="msf-body">Reveal presents the findings from Observe, Surface, and Map in a structured way that surfaces the gap between how the organization is perceived and how it actually operates. This is done carefully — not to embarrass or assign fault, but to create the shared understanding that is a precondition for real change.</p>
           <p class="msf-body">Organizations can only improve systems they can see. Reveal is the act of making the system visible to the people who have the power to change it. The most common reaction is not surprise at the findings themselves — it is surprise at how long those findings had been hiding in plain sight.</p>
-          <div class="msf-tools">
-            <div class="msf-tools-label">Techniques used</div>
-            <div class="tool-chips">
-              <span class="tool-chip">Perception vs. reality presentation</span>
-              <span class="tool-chip">Leadership readouts</span>
-              <span class="tool-chip">Finding prioritization</span>
-              <span class="tool-chip">Blind spot identification</span>
-            </div>
-          </div>
+          <div class="msf-tools"><div class="msf-tools-label">Techniques used</div><div class="tool-chips"><span class="tool-chip">Perception vs. reality presentation</span><span class="tool-chip">Leadership readouts</span><span class="tool-chip">Finding prioritization</span><span class="tool-chip">Blind spot identification</span></div></div>
         </div>
       </div>
-
       <div class="method-step-full">
         <div class="msf-num">5</div>
-        <div class="msf-content">
+        <div>
           <div class="msf-label">Step Five</div>
           <h2 class="msf-title">Diagnose</h2>
           <p class="msf-body">A visible problem is not yet an understood problem. Diagnose is the process of moving from "here is what is happening" to "here is why it keeps happening." This distinction matters enormously. Most organizations address symptoms. Diagnose finds causes.</p>
           <p class="msf-body">The recurring mistake in a team is rarely about individual performance. It is about an unclear handoff point, an undocumented assumption, a missing feedback loop, or an accountability gap that the org structure inadvertently created. Diagnose traces the chain from symptom to systemic cause.</p>
-          <p class="msf-body">The output of Diagnose is not a list of problems. It is a prioritized, causally-linked understanding of why the organization behaves as it does — and which interventions will create the most leverage. This is what separates meaningful change from well-intentioned busywork.</p>
-          <div class="msf-tools">
-            <div class="msf-tools-label">Techniques used</div>
-            <div class="tool-chips">
-              <span class="tool-chip">Root cause analysis</span>
-              <span class="tool-chip">System loop identification</span>
-              <span class="tool-chip">Causal chain mapping</span>
-              <span class="tool-chip">Leverage point analysis</span>
-            </div>
-          </div>
+          <p class="msf-body">The output of Diagnose is not a list of problems. It is a prioritized, causally-linked understanding of why the organization behaves as it does — and which interventions will create the most leverage.</p>
+          <div class="msf-tools"><div class="msf-tools-label">Techniques used</div><div class="tool-chips"><span class="tool-chip">Root cause analysis</span><span class="tool-chip">System loop identification</span><span class="tool-chip">Causal chain mapping</span><span class="tool-chip">Leverage point analysis</span></div></div>
         </div>
       </div>
-
       <div class="method-step-full">
         <div class="msf-num">6</div>
-        <div class="msf-content">
+        <div>
           <div class="msf-label">Step Six</div>
           <h2 class="msf-title">Align</h2>
           <p class="msf-body">Understanding a problem individually is not enough. Organizations don't change because one leader finally sees something clearly — they change when enough people share a common picture of reality that they can act on together. Align is the process of building that shared understanding.</p>
-          <p class="msf-body">This often means facilitating structured conversations between people who have been operating on different mental models of the same organization. It means making the work of Reveal and Diagnose legible not just to the leadership team but to the managers and teams who will have to implement anything that follows.</p>
-          <p class="msf-body">Alignment is not agreement. People can have different opinions about what to do next. But they need to share the same understanding of the terrain before those opinions can be productive. Align creates that shared map.</p>
-          <div class="msf-tools">
-            <div class="msf-tools-label">Techniques used</div>
-            <div class="tool-chips">
-              <span class="tool-chip">Cross-level workshops</span>
-              <span class="tool-chip">Shared reality sessions</span>
-              <span class="tool-chip">Assumption surfacing</span>
-              <span class="tool-chip">Structured facilitation</span>
-            </div>
-          </div>
+          <p class="msf-body">This often means facilitating structured conversations between people who have been operating on different mental models of the same organization. Alignment is not agreement. People can have different opinions about what to do next. But they need to share the same understanding of the terrain before those opinions can be productive.</p>
+          <div class="msf-tools"><div class="msf-tools-label">Techniques used</div><div class="tool-chips"><span class="tool-chip">Cross-level workshops</span><span class="tool-chip">Shared reality sessions</span><span class="tool-chip">Assumption surfacing</span><span class="tool-chip">Structured facilitation</span></div></div>
         </div>
       </div>
-
       <div class="method-step-full">
         <div class="msf-num">7</div>
-        <div class="msf-content">
+        <div>
           <div class="msf-label">Step Seven</div>
           <h2 class="msf-title">Enable</h2>
           <p class="msf-body">The final step of the Bay Circle Method is also its most important. Enable is where the work shifts from Bay Circle seeing your organization clearly to your organization seeing itself clearly — without us in the room.</p>
           <p class="msf-body">This means teaching leaders and teams the observational habits, diagnostic questions, and mapping practices that made this engagement valuable. It means embedding the capability to surface problems early, before they calcify into recurring dysfunction. It means leaving the organization more capable than we found it.</p>
-          <p class="msf-body">Bay Circle is not in the business of creating dependency. A successful engagement ends with the client not needing us for the same problem again. Enable is how we measure that. An organization that can see its own systems — that has internalized the habits of observation, diagnosis, and alignment — is an organization that can continue to improve on its own terms.</p>
-          <div class="msf-tools">
-            <div class="msf-tools-label">Techniques used</div>
-            <div class="tool-chips">
-              <span class="tool-chip">Internal capability workshops</span>
-              <span class="tool-chip">Diagnostic habit training</span>
-              <span class="tool-chip">Self-assessment frameworks</span>
-              <span class="tool-chip">Ongoing review cadence design</span>
-            </div>
-          </div>
+          <p class="msf-body">Bay Circle is not in the business of creating dependency. A successful engagement ends with the client not needing us for the same problem again. An organization that can see its own systems — that has internalized the habits of observation, diagnosis, and alignment — is an organization that can continue to improve on its own terms.</p>
+          <div class="msf-tools"><div class="msf-tools-label">Techniques used</div><div class="tool-chips"><span class="tool-chip">Internal capability workshops</span><span class="tool-chip">Diagnostic habit training</span><span class="tool-chip">Self-assessment frameworks</span><span class="tool-chip">Ongoing review cadence design</span></div></div>
         </div>
       </div>
-
     </div>
-
     <div class="method-cta-section">
       <h2 class="section-heading">Ready to see your organization clearly?</h2>
       <p class="section-body">The first conversation is about understanding your situation — not selling a solution. Let's talk.</p>
       <button class="btn-primary" onclick="navigate('contact')">Start a conversation</button>
     </div>
-
     <footer class="footer">
       <div>
         <div class="footer-brand">Bay Circle Consulting</div>
         <div class="footer-tagline">See the system. Change the outcome.</div>
         <div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.8rem;">
+      <div style="display:flex;flex-direction:column;align-items:flex-end;">
         <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
       </div>
     </footer>
+  </div>
 
-  </div><!-- /method -->
-
-
-  <!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
+  <!-- ABOUT -->
   <div class="page-view" id="page-about">
-
     <div class="about-hero">
       <div class="section-label">About Bay Circle</div>
       <h1 class="about-hero-headline">Built on the belief that<br><em style="font-style:italic;color:var(--gold-light)">clarity precedes change</em></h1>
       <p class="about-hero-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
     </div>
-
     <div class="about-body">
       <div class="section-label">The founder</div>
       <h2 class="section-heading">Placeholder — your story goes here</h2>
@@ -446,80 +373,47 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
           <p class="lorem-block">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p class="lorem-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </div>
-        <div class="about-photo-placeholder">
-          <span>Photo placeholder</span>
-        </div>
+        <div class="about-photo-placeholder"><span>Photo placeholder</span></div>
       </div>
     </div>
-
     <div class="about-values">
       <div class="section-label">What we believe</div>
       <h2 class="section-heading">The principles behind the work</h2>
       <div class="values-grid">
-        <div class="value-item">
-          <div class="value-num">01</div>
-          <div class="value-title">Clarity before change</div>
-          <div class="value-body">No organization should try to fix what it cannot yet see. Understanding must come before intervention.</div>
-        </div>
-        <div class="value-item">
-          <div class="value-num">02</div>
-          <div class="value-title">People are rarely the problem</div>
-          <div class="value-body">Most dysfunction is systemic. Blaming individuals is usually wrong and always unhelpful.</div>
-        </div>
-        <div class="value-item">
-          <div class="value-num">03</div>
-          <div class="value-title">Independence over dependency</div>
-          <div class="value-body">A successful engagement ends with the client not needing us for the same problem again.</div>
-        </div>
-        <div class="value-item">
-          <div class="value-num">04</div>
-          <div class="value-title">All three levels matter</div>
-          <div class="value-body">Leadership, management, and frontline employees see different realities. All three are necessary to understand the full system.</div>
-        </div>
+        <div><div class="value-num">01</div><div class="value-title">Clarity before change</div><div class="value-body">No organization should try to fix what it cannot yet see. Understanding must come before intervention.</div></div>
+        <div><div class="value-num">02</div><div class="value-title">People are rarely the problem</div><div class="value-body">Most dysfunction is systemic. Blaming individuals is usually wrong and always unhelpful.</div></div>
+        <div><div class="value-num">03</div><div class="value-title">Independence over dependency</div><div class="value-body">A successful engagement ends with the client not needing us for the same problem again.</div></div>
+        <div><div class="value-num">04</div><div class="value-title">All three levels matter</div><div class="value-body">Leadership, management, and frontline employees see different realities. All three are necessary to understand the full system.</div></div>
       </div>
     </div>
-
     <footer class="footer">
       <div>
         <div class="footer-brand">Bay Circle Consulting</div>
         <div class="footer-tagline">See the system. Change the outcome.</div>
         <div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.8rem;">
+      <div style="display:flex;flex-direction:column;align-items:flex-end;">
         <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
       </div>
     </footer>
+  </div>
 
-  </div><!-- /about -->
-
-
-  <!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+  <!-- CONTACT -->
   <div class="page-view" id="page-contact">
-
     <div class="contact-hero">
       <div class="section-label">Get in touch</div>
       <h1 class="contact-hero-headline">The first conversation<br><em style="font-style:italic;color:var(--gold-light)">is about your situation</em></h1>
       <p class="contact-hero-sub">Not a sales call. Not a proposal. Just an honest conversation about what's happening in your organization and whether Bay Circle can help you see it more clearly.</p>
     </div>
-
     <div class="contact-body">
-      <div class="contact-form-wrap">
+      <div>
         <div id="contact-form-area">
-          <div class="form-row">
-            <label class="form-label">Your name</label>
-            <input class="form-input" type="text" placeholder="First and last name" id="cf-name">
-          </div>
-          <div class="form-row">
-            <label class="form-label">Organization</label>
-            <input class="form-input" type="text" placeholder="Company or organization name" id="cf-org">
-          </div>
-          <div class="form-row">
-            <label class="form-label">Email address</label>
-            <input class="form-input" type="email" placeholder="you@company.com" id="cf-email">
-          </div>
+          <div class="form-row"><label class="form-label">Your name</label><input class="form-input" type="text" placeholder="First and last name" id="cf-name"></div>
+          <div class="form-row"><label class="form-label">Organization</label><input class="form-input" type="text" placeholder="Company or organization name"></div>
+          <div class="form-row"><label class="form-label">Email address</label><input class="form-input" type="email" placeholder="you@company.com" id="cf-email"></div>
           <div class="form-row">
             <label class="form-label">What's happening?</label>
-            <select class="form-select" id="cf-topic">
+            <select class="form-select">
               <option value="">Select the closest description</option>
               <option>We're growing faster than our systems can handle</option>
               <option>The same problems keep recurring</option>
@@ -530,10 +424,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
               <option>Other</option>
             </select>
           </div>
-          <div class="form-row">
-            <label class="form-label">Tell me more</label>
-            <textarea class="form-textarea" placeholder="A brief description of what's going on and what you've already tried..." id="cf-message"></textarea>
-          </div>
+          <div class="form-row"><label class="form-label">Tell me more</label><textarea class="form-textarea" placeholder="A brief description of what's going on and what you've already tried..."></textarea></div>
           <button class="form-submit" onclick="submitForm()">Send message</button>
           <p class="form-note">I respond to every inquiry personally, typically within one business day.</p>
         </div>
@@ -542,14 +433,13 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
           <p>I'll review what you've shared and be in touch within one business day. In the meantime, you're welcome to explore <span style="color:var(--navy);text-decoration:underline;cursor:pointer" onclick="navigate('method')">The Method</span> in more detail.</p>
         </div>
       </div>
-
-      <div class="contact-aside">
+      <div>
         <div class="aside-block">
           <div class="aside-label">Prefer to talk?</div>
           <h2 class="aside-heading">Book a discovery call</h2>
           <p class="aside-body">If you'd rather start with a conversation, you can book a 30-minute call directly. No preparation needed — just bring whatever is top of mind.</p>
           <button class="btn-cal">Book a 30-minute call →</button>
-          <p style="font-size:0.75rem;font-weight:300;color:var(--muted);margin-top:0.8rem;">(Calendar link — connect your Calendly or Cal.com here)</p>
+          <p style="font-size:0.75rem;font-weight:300;color:var(--muted);margin-top:0.8rem;">(Connect your Calendly or Cal.com link here)</p>
         </div>
         <div class="aside-block">
           <div class="aside-label">Not sure yet?</div>
@@ -559,33 +449,27 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         </div>
       </div>
     </div>
-
     <footer class="footer">
       <div>
         <div class="footer-brand">Bay Circle Consulting</div>
         <div class="footer-tagline">See the system. Change the outcome.</div>
         <div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.8rem;">
+      <div style="display:flex;flex-direction:column;align-items:flex-end;">
         <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
       </div>
     </footer>
+  </div>
 
-  </div><!-- /contact -->
-
-</div><!-- /site -->
+</div>
 
 <script>
-let currentPage = 'home';
 let mapFrame;
 
 function navigate(page) {
   document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === page);
-  });
-  currentPage = page;
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.dataset.page === page));
   window.scrollTo(0, 0);
   if (page === 'home') initMap();
 }
@@ -609,23 +493,15 @@ function initMap() {
   if (mapFrame) cancelAnimationFrame(mapFrame);
   const ctx = canvas.getContext('2d');
   let W, H, nodes;
-
   function setup() {
     W = canvas.offsetWidth; H = canvas.offsetHeight;
     canvas.width = W; canvas.height = H;
     nodes = [];
-    for (let i = 0; i < 14; i++) {
-      nodes.push({ x: 40 + Math.random()*(W-80), y: 40 + Math.random()*(H-80), vx: (Math.random()-.5)*.25, vy: (Math.random()-.5)*.25, r: 3+Math.random()*3, pulse: Math.random()*Math.PI*2 });
-    }
+    for (let i = 0; i < 14; i++) nodes.push({ x: 40+Math.random()*(W-80), y: 40+Math.random()*(H-80), vx: (Math.random()-.5)*.25, vy: (Math.random()-.5)*.25, r: 3+Math.random()*3, pulse: Math.random()*Math.PI*2 });
   }
-
   function draw() {
     ctx.clearRect(0,0,W,H);
-    for (let n of nodes) {
-      n.x+=n.vx; n.y+=n.vy; n.pulse+=0.018;
-      if(n.x<20||n.x>W-20) n.vx*=-1;
-      if(n.y<20||n.y>H-20) n.vy*=-1;
-    }
+    for (let n of nodes) { n.x+=n.vx; n.y+=n.vy; n.pulse+=0.018; if(n.x<20||n.x>W-20)n.vx*=-1; if(n.y<20||n.y>H-20)n.vy*=-1; }
     for (let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++) {
       const a=nodes[i],b=nodes[j],dx=b.x-a.x,dy=b.y-a.y,dist=Math.sqrt(dx*dx+dy*dy);
       if(dist<140){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle=`rgba(200,169,110,${(1-dist/140)*.18})`; ctx.lineWidth=.8; ctx.stroke(); }
