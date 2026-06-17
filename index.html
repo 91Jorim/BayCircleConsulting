@@ -1,4 +1,3 @@
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,6 +42,30 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .problem-card { border-left: 2px solid var(--gold); padding: 1.2rem 1.4rem; background: var(--linen); }
 .problem-card strong { display: block; font-size: 0.82rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
 .problem-card p { font-size: 0.88rem; font-weight: 300; color: var(--body); line-height: 1.7; }
+
+/* ── Global max-width constraint ── */
+body { background: var(--navy); } /* fills sides on wide screens with nav color */
+.site { max-width: 1600px; margin: 0 auto; box-shadow: 0 0 0 1px rgba(200,169,110,0.08); }
+
+/* ── How It Works – linear strip ── */
+.how-it-works { background: var(--navy-mid); padding: 2.6rem 3rem; border-top: 1px solid rgba(200,169,110,0.15); border-bottom: 1px solid rgba(200,169,110,0.15); }
+.how-it-works-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; text-align: center; margin-bottom: 1.8rem; }
+.hiw-steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; }
+.hiw-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; flex: 1; max-width: 200px; }
+.hiw-step-num { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; font-weight: 400; color: rgba(200,169,110,0.4); letter-spacing: 0.12em; margin-bottom: 0.4rem; }
+.hiw-step-title { font-size: 0.82rem; font-weight: 500; color: var(--gold-light); letter-spacing: 0.03em; margin-bottom: 0.35rem; line-height: 1.35; }
+.hiw-step-desc { font-size: 0.77rem; font-weight: 300; color: rgba(245,242,236,0.42); line-height: 1.6; }
+.hiw-arrow { color: rgba(200,169,110,0.3); font-size: 1rem; padding-top: 0.6rem; flex-shrink: 0; }
+/* Mobile: collapse to vertical numbered list */
+@media (max-width: 640px) {
+  .how-it-works { padding: 2.4rem 1.8rem; }
+  .hiw-steps { flex-direction: column; align-items: stretch; gap: 0; }
+  .hiw-arrow { display: none; }
+  .hiw-step { flex-direction: row; text-align: left; align-items: flex-start; max-width: 100%; padding: 1rem 0; border-bottom: 1px solid rgba(200,169,110,0.1); gap: 1rem; }
+  .hiw-step:last-child { border-bottom: none; }
+  .hiw-step-num { min-width: 2rem; font-size: 1.1rem; margin-bottom: 0; padding-top: 0.05rem; }
+  .hiw-step-desc { display: block; }
+}
 
 .pillars-teaser { background: var(--navy); padding: 4.5rem 3rem; }
 .pillars-teaser .section-heading { color: var(--linen); margin-bottom: 0.8rem; }
@@ -218,6 +241,35 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
       <div class="problem-card"><strong>Communication breakdowns</strong><p>Leadership believes one thing is happening. Employees experience something different. Everyone is acting on incomplete information, and nobody realizes it until something breaks.</p></div>
       <div class="problem-card"><strong>Execution gaps</strong><p>The meeting was productive. Everyone agreed on next steps. A month later, very little has changed and nobody can explain exactly why.</p></div>
       <div class="problem-card"><strong>Firefighting culture</strong><p>Every day feels urgent. Managers spend more time responding to problems than preventing them. The organization becomes highly reactive, even when everyone is working hard.</p></div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="how-it-works-label">How this works</div>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-step-num">01</div>
+        <div class="hiw-step-title">Understand your system</div>
+        <div class="hiw-step-desc">We observe how work actually moves — not how it's supposed to</div>
+      </div>
+      <div class="hiw-arrow">→</div>
+      <div class="hiw-step">
+        <div class="hiw-step-num">02</div>
+        <div class="hiw-step-title">Map invisible structure</div>
+        <div class="hiw-step-desc">We make the informal, undocumented, and assumed visible</div>
+      </div>
+      <div class="hiw-arrow">→</div>
+      <div class="hiw-step">
+        <div class="hiw-step-num">03</div>
+        <div class="hiw-step-title">Identify breakdown patterns</div>
+        <div class="hiw-step-desc">We locate root causes — not just recurring symptoms</div>
+      </div>
+      <div class="hiw-arrow">→</div>
+      <div class="hiw-step">
+        <div class="hiw-step-num">04</div>
+        <div class="hiw-step-title">Build lasting clarity</div>
+        <div class="hiw-step-desc">You leave with the ability to see and improve your systems independently</div>
+      </div>
     </div>
   </section>
 
