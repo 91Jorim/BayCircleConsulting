@@ -11,14 +11,12 @@ body { background: transparent; }
 .page-view { display: none; }
 .page-view.active { display: block; }
 
-/* NAV */
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--navy); position: sticky; top: 0; z-index: 100; }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--gold-light); letter-spacing: 0.04em; cursor: pointer; }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a { font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
 
-/* HERO */
 .hero { background: var(--navy); min-height: 560px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 3rem 3rem 4rem; gap: 3rem; overflow: hidden; }
 .hero-eyebrow { font-size: 0.7rem; font-weight: 400; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.4rem; }
 .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem,5vw,3.6rem); font-weight: 300; color: #F5F2EC; line-height: 1.12; margin-bottom: 1.6rem; }
@@ -31,7 +29,6 @@ body { background: transparent; }
 .hero-canvas-wrap { position: relative; height: 380px; }
 canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
-/* SHARED */
 .belief-strip { background: var(--navy-mid); padding: 2rem 3rem; border-top: 1px solid rgba(200,169,110,0.2); border-bottom: 1px solid rgba(200,169,110,0.2); }
 .belief-strip p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; font-style: italic; color: var(--gold-light); text-align: center; line-height: 1.6; }
 .section { padding: 4.5rem 3rem; }
@@ -41,61 +38,23 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .btn-outline-gold { background: transparent; border: 1px solid rgba(200,169,110,0.5); color: var(--gold-light); padding: 0.75rem 2rem; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
 .btn-outline-gold:hover { border-color: var(--gold); color: var(--gold); }
 
-/* PROBLEMS */
 .problems-section { background: white; padding: 4.5rem 3rem; }
 .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 1.5rem; margin-top: 2.8rem; }
 .problem-card { border-left: 2px solid var(--gold); padding: 1.2rem 1.4rem; background: var(--linen); }
 .problem-card strong { display: block; font-size: 0.82rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
 .problem-card p { font-size: 0.88rem; font-weight: 300; color: var(--body); line-height: 1.7; }
 
-/* ── HOME PILLARS TEASER ── */
 .pillars-teaser { background: var(--navy); padding: 4.5rem 3rem; }
 .pillars-teaser .section-heading { color: var(--linen); margin-bottom: 0.8rem; }
 .pillars-teaser .section-body { color: rgba(245,242,236,0.55); margin-bottom: 3rem; max-width: 560px; }
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
-  background: rgba(200,169,110,0.15);
-}
-.pillar-teaser-card {
-  background: var(--navy);
-  padding: 1.6rem 1.8rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
-}
+.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(200,169,110,0.15); }
+.pillar-teaser-card { background: var(--navy); padding: 1.6rem 1.8rem; cursor: pointer; transition: background 0.2s; display: flex; gap: 1.2rem; align-items: flex-start; }
 .pillar-teaser-card:hover { background: rgba(255,255,255,0.025); }
-.ptc-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: rgba(200,169,110,0.3);
-  line-height: 1;
-  min-width: 1.8rem;
-  padding-top: 0.1rem;
-}
-.ptc-body {}
-.ptc-title {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--gold-light);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  margin-bottom: 0.35rem;
-}
-.ptc-question {
-  font-size: 0.83rem;
-  font-weight: 300;
-  color: rgba(245,242,236,0.45);
-  line-height: 1.6;
-  font-style: italic;
-}
+.ptc-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: rgba(200,169,110,0.3); line-height: 1; min-width: 1.8rem; padding-top: 0.1rem; }
+.ptc-title { font-size: 0.8rem; font-weight: 500; color: var(--gold-light); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 0.35rem; }
+.ptc-question { font-size: 0.83rem; font-weight: 300; color: rgba(245,242,236,0.45); line-height: 1.6; font-style: italic; }
 .pillars-cta { text-align: center; margin-top: 2.5rem; }
 
-/* POSITIONING */
 .positioning-section { background: var(--linen); padding: 4.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .differentiator { border-top: 2px solid var(--sand); padding-top: 1.5rem; margin-top: 1.5rem; }
 .diff-row { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
@@ -104,7 +63,6 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .label-us { background: var(--navy); color: var(--gold-light); }
 .diff-text { font-size: 0.86rem; font-weight: 300; color: var(--body); line-height: 1.6; }
 
-/* FOOTER */
 .footer { background: var(--navy); padding: 3rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; border-top: 1px solid rgba(200,169,110,0.2); }
 .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--gold-light); }
 .footer-tagline { font-size: 0.78rem; font-weight: 300; color: rgba(245,242,236,0.4); margin-top: 0.4rem; }
@@ -112,45 +70,20 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .footer-cta { background: transparent; border: 1px solid rgba(200,169,110,0.4); color: var(--gold-light); padding: 0.75rem 2rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
 .footer-cta:hover { border-color: var(--gold); color: var(--gold); }
 
-/* ── METHOD / SEVEN PILLARS PAGE ── */
 .method-hero { background: var(--navy); padding: 5rem 3rem 4rem; }
 .method-hero .section-label { color: var(--gold); }
 .method-hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); font-weight: 300; color: var(--linen); line-height: 1.12; margin-bottom: 1.5rem; }
 .method-hero-headline em { font-style: italic; color: var(--gold-light); }
 .method-hero-sub { font-size: 0.95rem; font-weight: 300; color: rgba(245,242,236,0.6); line-height: 1.85; max-width: 640px; margin-bottom: 2rem; }
-.method-hero-book {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  border: 1px solid rgba(200,169,110,0.25);
-  padding: 0.7rem 1.2rem;
-  margin-top: 0.5rem;
-}
+.method-hero-book { display: inline-flex; align-items: center; gap: 0.8rem; border: 1px solid rgba(200,169,110,0.25); padding: 0.7rem 1.2rem; margin-top: 0.5rem; }
 .method-hero-book span { font-size: 0.75rem; font-weight: 300; color: rgba(245,242,236,0.4); letter-spacing: 0.04em; }
 .method-hero-book strong { font-size: 0.78rem; font-weight: 400; color: var(--gold-light); font-style: italic; }
+.method-hero-case { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; margin-left: 1rem; font-size: 0.78rem; color: var(--gold-light); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
-/* PILLAR FULL */
-.pillar-full {
-  padding: 0 3rem 1rem;
-  background: var(--linen);
-}
-.pillar-block {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 2.5rem;
-  padding: 4rem 0;
-  border-bottom: 1px solid var(--sand);
-  align-items: start;
-}
+.pillar-full { padding: 0 3rem 1rem; background: var(--linen); }
+.pillar-block { display: grid; grid-template-columns: 72px 1fr; gap: 2.5rem; padding: 4rem 0; border-bottom: 1px solid var(--sand); align-items: start; }
 .pillar-block:last-child { border-bottom: none; }
-.pb-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4.5rem;
-  font-weight: 300;
-  color: rgba(200,169,110,0.25);
-  line-height: 1;
-}
-.pb-content {}
+.pb-num { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 300; color: rgba(200,169,110,0.25); line-height: 1; }
 .pb-label { font-size: 0.65rem; font-weight: 500; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.4rem; }
 .pb-title { font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; font-weight: 300; color: var(--navy); line-height: 1.15; margin-bottom: 0.5rem; }
 .pb-question { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; font-style: italic; color: var(--steel); margin-bottom: 1.6rem; line-height: 1.5; }
@@ -165,7 +98,6 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .method-cta-section .section-heading { color: var(--linen); margin-bottom: 1rem; }
 .method-cta-section .section-body { color: rgba(245,242,236,0.6); margin: 0 auto 2rem; }
 
-/* ABOUT */
 .about-hero { background: var(--navy); padding: 5rem 3rem 4rem; }
 .about-hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 300; color: var(--linen); line-height: 1.15; margin-bottom: 1.5rem; }
 .about-hero-sub { font-size: 0.95rem; font-weight: 300; color: rgba(245,242,236,0.6); line-height: 1.85; max-width: 600px; }
@@ -180,7 +112,14 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .value-title { font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; }
 .value-body { font-size: 0.85rem; font-weight: 300; color: var(--body); line-height: 1.75; }
 
-/* CONTACT */
+/* ── ABOUT BRIDGE TO CASE STUDY ── */
+.about-bridge { background: var(--navy-mid); padding: 4rem 3rem; }
+.bridge-inner { max-width: 700px; }
+.bridge-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.bridge-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; font-style: italic; color: var(--linen); line-height: 1.55; margin-bottom: 1.6rem; }
+.bridge-link { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; border: 1px solid rgba(200,169,110,0.4); color: var(--gold-light); padding: 0.7rem 1.6rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+.bridge-link:hover { border-color: var(--gold); color: var(--gold); }
+
 .contact-hero { background: var(--navy); padding: 5rem 3rem 4rem; }
 .contact-hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 300; color: var(--linen); line-height: 1.15; margin-bottom: 1rem; }
 .contact-hero-sub { font-size: 0.95rem; font-weight: 300; color: rgba(245,242,236,0.6); line-height: 1.85; max-width: 540px; }
@@ -203,6 +142,34 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .form-success.show { display: block; }
 .form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--navy); margin-bottom: 0.5rem; }
 .form-success p { font-size: 0.88rem; font-weight: 300; color: var(--body); line-height: 1.7; }
+
+/* ── CASE STUDY PAGE ── */
+.case-hero { background: var(--navy); padding: 5rem 3rem 4rem; }
+.case-hero .section-label { color: var(--gold); }
+.case-hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); font-weight: 300; color: var(--linen); line-height: 1.15; margin-bottom: 1.2rem; }
+.case-hero-headline em { font-style: italic; color: var(--gold-light); }
+.case-hero-sub { font-size: 0.95rem; font-weight: 300; color: rgba(245,242,236,0.6); line-height: 1.85; max-width: 640px; }
+.case-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
+.case-tag { background: rgba(200,169,110,0.12); border: 1px solid rgba(200,169,110,0.25); color: var(--gold-light); font-size: 0.72rem; padding: 0.3rem 0.85rem; letter-spacing: 0.04em; }
+
+.case-body { padding: 4.5rem 3rem 1rem; background: var(--linen); max-width: 760px; margin: 0 auto; }
+.case-section { margin-bottom: 3.5rem; }
+.case-section-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1rem; }
+.case-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--navy); margin-bottom: 1.3rem; line-height: 1.25; }
+.case-p { font-size: 0.93rem; font-weight: 300; color: var(--body); line-height: 1.9; margin-bottom: 1.1rem; }
+.case-p.lead { font-size: 1rem; }
+.case-list { margin: 1rem 0 1.4rem 0; padding-left: 0; }
+.case-list li { font-size: 0.91rem; font-weight: 300; color: var(--body); line-height: 1.8; margin-bottom: 0.6rem; padding-left: 1.3rem; position: relative; }
+.case-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+.case-callout { border-left: 2px solid var(--gold); background: white; padding: 1.4rem 1.6rem; margin: 1.8rem 0; }
+.case-callout p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; font-style: italic; color: var(--navy); line-height: 1.55; margin: 0; }
+.case-subhead { font-size: 0.78rem; font-weight: 500; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; margin: 1.6rem 0 0.8rem 0; }
+.case-pillar-tag { display: inline-block; background: var(--navy); color: var(--gold-light); font-size: 0.72rem; padding: 0.25rem 0.7rem; letter-spacing: 0.04em; margin-bottom: 0.8rem; cursor: pointer; }
+.case-divider-full { height: 1px; background: var(--sand); margin: 3.5rem 0; }
+.case-closing { background: var(--navy); padding: 4rem 3rem; }
+.case-closing-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.case-closing p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; font-style: italic; color: var(--gold-light); line-height: 1.6; margin-bottom: 1rem; }
+.case-closing p.small { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 300; font-style: normal; color: rgba(245,242,236,0.55); }
 </style>
 
 <div class="site">
@@ -210,6 +177,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
   <div class="nav-logo" onclick="navigate('home')">Bay Circle Consulting</div>
   <div class="nav-links">
     <a onclick="navigate('method')" data-page="method">The Method</a>
+    <a onclick="navigate('casestudy')" data-page="casestudy">Case Study</a>
     <a onclick="navigate('about')" data-page="about">About</a>
     <a onclick="navigate('contact')" data-page="contact">Contact</a>
   </div>
@@ -230,9 +198,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
     <div class="hero-canvas-wrap"><canvas id="systemMap"></canvas></div>
   </section>
 
-  <div class="belief-strip">
-    <p>"You cannot improve what you cannot see. Clarity comes before change."</p>
-  </div>
+  <div class="belief-strip"><p>"You cannot improve what you cannot see. Clarity comes before change."</p></div>
 
   <section class="section" id="home-problems" style="background:var(--linen);">
     <div class="section-label">The problem</div>
@@ -242,36 +208,33 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
   </section>
 
   <section class="problems-section">
-    <div class="section-label">Does This Sound familiar?</div>
-    <h2 class="section-heading">What Invisible Systems Look <br>like</h2>
+    <div class="section-label">Sound familiar?</div>
+    <h2 class="section-heading">Signs your organization has<br>a visibility problem</h2>
     <div class="problems-grid">
-      <div class="problem-card"><strong>Growth-related chaos</strong><p>Everything used to fit in a few conversations. Now work falls through the cracks, priorities collide, and leaders spend more time reacting than planning..</p></div>
+      <div class="problem-card"><strong>Growth-related chaos</strong><p>Everything used to fit in a few conversations. Now work falls through the cracks, priorities collide, and leaders spend more time reacting than planning.</p></div>
       <div class="problem-card"><strong>Repeated mistakes</strong><p>The same problems keep coming back. They get fixed, discussed, and documented yet somehow they return a few weeks later wearing a different disguise.</p></div>
       <div class="problem-card"><strong>Unclear ownership</strong><p>Everyone agrees the problem matters. Nobody is quite sure who owns it. Decisions linger, priorities drift, and the work quietly migrates to whoever cares the most.</p></div>
       <div class="problem-card"><strong>Overreliance on key people</strong><p>You have people who seem to know everything. When they're unavailable, progress slows, questions pile up, and everyone realizes the system was actually a person.</p></div>
       <div class="problem-card"><strong>Communication breakdowns</strong><p>Leadership believes one thing is happening. Employees experience something different. Everyone is acting on incomplete information, and nobody realizes it until something breaks.</p></div>
       <div class="problem-card"><strong>Execution gaps</strong><p>The meeting was productive. Everyone agreed on next steps. A month later, very little has changed and nobody can explain exactly why.</p></div>
-      <div class="problem-card"><strong>Firefighting Culture</strong><p>Every day feels urgent. Managers spend more time responding to problems than preventing them. The organization becomes highly reactive, even when everyone is working hard.</p></div>    
+      <div class="problem-card"><strong>Firefighting culture</strong><p>Every day feels urgent. Managers spend more time responding to problems than preventing them. The organization becomes highly reactive, even when everyone is working hard.</p></div>
     </div>
   </section>
 
-  <!-- PILLARS TEASER -->
   <section class="pillars-teaser">
     <div class="section-label">The Seven Pillars</div>
     <h2 class="section-heading" style="color:var(--linen);">Every organization evaluated<br>through one framework</h2>
-    <p class="section-body">Over time, we've found that every recurring organizational problem can be traced back to one or more of seven areas. The Seven Pillars of Invisible Management are the diagnostic lens Bay Circle brings to every engagement and the same framework at the heart of the book <em style="color:var(--gold-light)">The Invisible Work of Management.</em></p>
+    <p class="section-body">The Seven Pillars of Invisible Management are the diagnostic lens Bay Circle brings to every engagement and the same framework at the heart of the book <em style="color:var(--gold-light)">The Invisible Work of Management.</em></p>
     <div class="pillars-grid">
-      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">1</div><div class="ptc-body"><div class="ptc-title">Observe the Flow</div><div class="ptc-question">Do we actually understand how work moves through this organization?</div></div></div>
-      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">2</div><div class="ptc-body"><div class="ptc-title">Identify Friction</div><div class="ptc-question">Where is energy being lost and why does it keep happening?</div></div></div>
-      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">3</div><div class="ptc-body"><div class="ptc-title">Find the Root</div><div class="ptc-question">Are we solving the right problem, or treating the symptom?</div></div></div>
-      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">4</div><div class="ptc-body"><div class="ptc-title">Clarify Ownership</div><div class="ptc-question">Does everyone know what they own and where their ownership ends?</div></div></div>
-      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">5</div><div class="ptc-body"><div class="ptc-title">Reduce Cognitive Load</div><div class="ptc-question">How much of this organization exists only in people's heads?</div></div></div>
-      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">6</div><div class="ptc-body"><div class="ptc-title">Protect Stability</div><div class="ptc-question">What would break if one key person left tomorrow?</div></div></div>
-      <div class="pillar-teaser-card" onclick="navigate('method')" style="grid-column:1/-1;"><div class="ptc-num">7</div><div class="ptc-body"><div class="ptc-title">Renew the System</div><div class="ptc-question">Does this organization have the mechanisms to keep improving or does it require outside intervention every time?</div></div></div>
+      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">1</div><div><div class="ptc-title">Observe the Flow</div><div class="ptc-question">Do we actually understand how work moves through this organization?</div></div></div>
+      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">2</div><div><div class="ptc-title">Identify Friction</div><div class="ptc-question">Where is energy being lost and why does it keep happening?</div></div></div>
+      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">3</div><div><div class="ptc-title">Find the Root</div><div class="ptc-question">Are we solving the right problem, or treating the symptom?</div></div></div>
+      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">4</div><div><div class="ptc-title">Clarify Ownership</div><div class="ptc-question">Does everyone know what they own and where their ownership ends?</div></div></div>
+      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">5</div><div><div class="ptc-title">Reduce Cognitive Load</div><div class="ptc-question">How much of this organization exists only in people's heads?</div></div></div>
+      <div class="pillar-teaser-card" onclick="navigate('method')"><div class="ptc-num">6</div><div><div class="ptc-title">Protect Stability</div><div class="ptc-question">What would break if one key person left tomorrow?</div></div></div>
+      <div class="pillar-teaser-card" onclick="navigate('method')" style="grid-column:1/-1;"><div class="ptc-num">7</div><div><div class="ptc-title">Renew the System</div><div class="ptc-question">Does this organization have the mechanisms to keep improving or does it require outside intervention every time?</div></div></div>
     </div>
-    <div class="pillars-cta">
-      <button class="btn-outline-gold" onclick="navigate('method')">Explore the full framework →</button>
-    </div>
+    <div class="pillars-cta"><button class="btn-outline-gold" onclick="navigate('method')">Explore the full framework →</button></div>
   </section>
 
   <section class="positioning-section">
@@ -283,50 +246,32 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
     </div>
     <div>
       <div class="section-label">The difference</div>
-      <div class="differentiator">
-        <div class="diff-row"><span class="diff-label label-them">Others</span><span class="diff-text">Deliver solutions and move on</span></div>
-        <div class="diff-row"><span class="diff-label label-us">Bay Circle</span><span class="diff-text">Build your capacity to solve problems independently</span></div>
-      </div>
-      <div class="differentiator">
-        <div class="diff-row"><span class="diff-label label-them">Others</span><span class="diff-text">Focus on what went wrong</span></div>
-        <div class="diff-row"><span class="diff-label label-us">Bay Circle</span><span class="diff-text">Map the system that created the problem</span></div>
-      </div>
-      <div class="differentiator">
-        <div class="diff-row"><span class="diff-label label-them">Others</span><span class="diff-text">Validate leadership's existing view</span></div>
-        <div class="diff-row"><span class="diff-label label-us">Bay Circle</span><span class="diff-text">Surface the gap between perception and operational reality</span></div>
-      </div>
+      <div class="differentiator"><div class="diff-row"><span class="diff-label label-them">Others</span><span class="diff-text">Deliver solutions and move on</span></div><div class="diff-row"><span class="diff-label label-us">Bay Circle</span><span class="diff-text">Build your capacity to solve problems independently</span></div></div>
+      <div class="differentiator"><div class="diff-row"><span class="diff-label label-them">Others</span><span class="diff-text">Focus on what went wrong</span></div><div class="diff-row"><span class="diff-label label-us">Bay Circle</span><span class="diff-text">Map the system that created the problem</span></div></div>
+      <div class="differentiator"><div class="diff-row"><span class="diff-label label-them">Others</span><span class="diff-text">Validate leadership's existing view</span></div><div class="diff-row"><span class="diff-label label-us">Bay Circle</span><span class="diff-text">Surface the gap between perception and operational reality</span></div></div>
     </div>
   </section>
 
   <footer class="footer">
-    <div>
-      <div class="footer-brand">Bay Circle Consulting</div>
-      <div class="footer-tagline">See the system. Change the outcome.</div>
-      <div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;">
-      <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
-    </div>
+    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
-<!-- ═══════════ THE METHOD / SEVEN PILLARS ═══════════ -->
+<!-- ═══════════ THE METHOD ═══════════ -->
 <div class="page-view" id="page-method">
   <div class="method-hero">
     <div class="section-label">The Method</div>
     <h1 class="method-hero-headline">The Seven Pillars of<br><em>Invisible Management</em></h1>
     <p class="method-hero-sub">Most organizations try to solve problems before they understand them. The Seven Pillars are a diagnostic framework for seeing an organization clearly, not as it is documented, but as it actually operates. Every Bay Circle engagement is a guided application of this framework. Every chapter of the book is an exploration of one pillar.</p>
-    <div class="method-hero-book">
-      <span>Framework also explored in</span>
-      <strong>The Invisible Work of Management</strong>
-    </div>
+    <div class="method-hero-book"><span>Framework also explored in</span><strong>The Invisible Work of Management</strong></div>
+    <span class="method-hero-case" onclick="navigate('casestudy')">See where this came from — the origin case study →</span>
   </div>
 
   <div class="pillar-full">
-
     <div class="pillar-block">
       <div class="pb-num">1</div>
-      <div class="pb-content">
+      <div>
         <div class="pb-label">Pillar One</div>
         <h2 class="pb-title">Observe the Flow</h2>
         <p class="pb-question">"Do we actually understand how work moves through this organization?"</p>
@@ -335,20 +280,14 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-body">The goal of this pillar is to build an honest baseline, a picture of the organization as it actually operates. Everything else depends on it. You cannot diagnose what you haven't accurately observed. You cannot fix what you haven't honestly seen.</p>
         <div class="pb-divider"></div>
         <div class="pb-how-label">How Bay Circle applies this pillar</div>
-        <div class="pb-activities">
-          <span class="pb-activity">Shadow sessions</span>
-          <span class="pb-activity">Meeting observation</span>
-          <span class="pb-activity">Process walkthroughs</span>
-          <span class="pb-activity">Workflow mapping</span>
-          <span class="pb-activity">Communication channel audit</span>
-        </div>
+        <div class="pb-activities"><span class="pb-activity">Shadow sessions</span><span class="pb-activity">Meeting observation</span><span class="pb-activity">Process walkthroughs</span><span class="pb-activity">Workflow mapping</span><span class="pb-activity">Communication channel audit</span></div>
         <p class="pb-purpose">Purpose: Understand how work actually moves before drawing any conclusions about why it isn't moving better.</p>
       </div>
     </div>
 
     <div class="pillar-block">
       <div class="pb-num">2</div>
-      <div class="pb-content">
+      <div>
         <div class="pb-label">Pillar Two</div>
         <h2 class="pb-title">Identify Friction</h2>
         <p class="pb-question">"Where is energy being lost and why does it keep happening?"</p>
@@ -357,19 +296,14 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-body">Identifying friction means making it visible again. It means mapping where energy is spent versus where it is lost, and beginning to ask whether that loss is structural, baked into how the system is designed or situational, something that can be addressed without redesigning anything fundamental. Both answers are useful. Both lead somewhere.</p>
         <div class="pb-divider"></div>
         <div class="pb-how-label">How Bay Circle applies this pillar</div>
-        <div class="pb-activities">
-          <span class="pb-activity">Bottleneck analysis</span>
-          <span class="pb-activity">Friction mapping</span>
-          <span class="pb-activity">Rework identification</span>
-          <span class="pb-activity">Capacity review</span>
-        </div>
+        <div class="pb-activities"><span class="pb-activity">Bottleneck analysis</span><span class="pb-activity">Friction mapping</span><span class="pb-activity">Rework identification</span><span class="pb-activity">Capacity review</span></div>
         <p class="pb-purpose">Purpose: Find where energy is being lost — and distinguish structural friction from situational friction.</p>
       </div>
     </div>
 
     <div class="pillar-block">
       <div class="pb-num">3</div>
-      <div class="pb-content">
+      <div>
         <div class="pb-label">Pillar Three</div>
         <h2 class="pb-title">Find the Root</h2>
         <p class="pb-question">"Are we solving the right problem, or treating the symptom?"</p>
@@ -378,19 +312,14 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-body">Finding the root means being willing to follow the thread past the obvious answer. It means distinguishing between causes and contributing factors, between the thing that triggered a problem and the condition that made the problem possible. The most useful diagnostic question in this pillar is simple: if we fixed this symptom today, what would stop it from coming back?</p>
         <div class="pb-divider"></div>
         <div class="pb-how-label">How Bay Circle applies this pillar</div>
-        <div class="pb-activities">
-          <span class="pb-activity">Pattern analysis</span>
-          <span class="pb-activity">Root cause investigation</span>
-          <span class="pb-activity">Dependency mapping</span>
-          <span class="pb-activity">Causal chain tracing</span>
-        </div>
+        <div class="pb-activities"><span class="pb-activity">Pattern analysis</span><span class="pb-activity">Root cause investigation</span><span class="pb-activity">Dependency mapping</span><span class="pb-activity">Causal chain tracing</span></div>
         <p class="pb-purpose">Purpose: Separate symptoms from causes — so interventions create lasting change rather than temporary relief.</p>
       </div>
     </div>
 
     <div class="pillar-block">
       <div class="pb-num">4</div>
-      <div class="pb-content">
+      <div>
         <div class="pb-label">Pillar Four</div>
         <h2 class="pb-title">Clarify Ownership</h2>
         <p class="pb-question">"Does everyone know what they own and where their ownership ends?"</p>
@@ -399,19 +328,14 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-body">Clarifying ownership means making accountability structural rather than personal. It means mapping not just who does what, but who decides what, who escalates what, and where one person's ownership ends and another's begins. Done well, it eliminates the ambiguity that forces people to either over-communicate or under-communicate and quietly wastes both.</p>
         <div class="pb-divider"></div>
         <div class="pb-how-label">How Bay Circle applies this pillar</div>
-        <div class="pb-activities">
-          <span class="pb-activity">Responsibility mapping</span>
-          <span class="pb-activity">Handoff analysis</span>
-          <span class="pb-activity">Decision authority review</span>
-          <span class="pb-activity">Gap identification</span>
-        </div>
+        <div class="pb-activities"><span class="pb-activity">Responsibility mapping</span><span class="pb-activity">Handoff analysis</span><span class="pb-activity">Decision authority review</span><span class="pb-activity">Gap identification</span></div>
         <p class="pb-purpose">Purpose: Eliminate ambiguity so accountability is structural, not assumed.</p>
       </div>
     </div>
 
     <div class="pillar-block">
       <div class="pb-num">5</div>
-      <div class="pb-content">
+      <div>
         <div class="pb-label">Pillar Five</div>
         <h2 class="pb-title">Reduce Cognitive Load</h2>
         <p class="pb-question">"How much of this organization exists only in people's heads?"</p>
@@ -420,19 +344,14 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-body">Reducing cognitive load doesn't mean documenting everything. It means identifying which knowledge is genuinely critical, where it currently lives, and what would make it more accessible without creating bureaucratic overhead that nobody uses. The goal is an organization that runs on systems, not on the heroics of exceptional individuals.</p>
         <div class="pb-divider"></div>
         <div class="pb-how-label">How Bay Circle applies this pillar</div>
-        <div class="pb-activities">
-          <span class="pb-activity">Knowledge transfer analysis</span>
-          <span class="pb-activity">Documentation review</span>
-          <span class="pb-activity">Tool & process simplification</span>
-          <span class="pb-activity">Single-point-of-knowledge audit</span>
-        </div>
+        <div class="pb-activities"><span class="pb-activity">Knowledge transfer analysis</span><span class="pb-activity">Documentation review</span><span class="pb-activity">Tool & process simplification</span><span class="pb-activity">Single-point-of-knowledge audit</span></div>
         <p class="pb-purpose">Purpose: Reduce dependence on memory and heroics so the organization runs on systems, not exceptional individuals.</p>
       </div>
     </div>
 
     <div class="pillar-block">
       <div class="pb-num">6</div>
-      <div class="pb-content">
+      <div>
         <div class="pb-label">Pillar Six</div>
         <h2 class="pb-title">Protect Stability</h2>
         <p class="pb-question">"What would break if one key person left tomorrow?"</p>
@@ -441,19 +360,14 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-body">The organizations most at risk are often the ones performing best. Success creates the conditions for fragility. When things are working, there is no urgency to examine why. Processes don't get documented because the person running them is still here. Redundancy doesn't get built because nothing has broken yet. Protecting stability means doing the unsexy work of resilience before the crisis that would have made it obvious.</p>
         <div class="pb-divider"></div>
         <div class="pb-how-label">How Bay Circle applies this pillar</div>
-        <div class="pb-activities">
-          <span class="pb-activity">Risk assessment</span>
-          <span class="pb-activity">Single-point-of-failure review</span>
-          <span class="pb-activity">Change impact analysis</span>
-          <span class="pb-activity">Resilience mapping</span>
-        </div>
+        <div class="pb-activities"><span class="pb-activity">Risk assessment</span><span class="pb-activity">Single-point-of-failure review</span><span class="pb-activity">Change impact analysis</span><span class="pb-activity">Resilience mapping</span></div>
         <p class="pb-purpose">Purpose: Make fragility visible so the organization can build resilience before a crisis makes it urgent.</p>
       </div>
     </div>
 
     <div class="pillar-block">
       <div class="pb-num">7</div>
-      <div class="pb-content">
+      <div>
         <div class="pb-label">Pillar Seven</div>
         <h2 class="pb-title">Renew the System</h2>
         <p class="pb-question">"Does this organization have the mechanisms to keep improving or does it require outside intervention every time?"</p>
@@ -462,17 +376,10 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-body">Bay Circle's ultimate goal in every engagement is to make itself unnecessary. An organization that has internalized the Seven Pillars, that has built the habits of observation, diagnosis, and renewal into how it operates doesn't need to call us every time something goes wrong. It can see the problem forming before it becomes a crisis, and it has the language and the tools to address it. That is what a renewed system looks like.</p>
         <div class="pb-divider"></div>
         <div class="pb-how-label">How Bay Circle applies this pillar</div>
-        <div class="pb-activities">
-          <span class="pb-activity">Review process design</span>
-          <span class="pb-activity">Feedback loop analysis</span>
-          <span class="pb-activity">Improvement mechanism audit</span>
-          <span class="pb-activity">Internal capability workshops</span>
-          <span class="pb-activity">Self-assessment frameworks</span>
-        </div>
+        <div class="pb-activities"><span class="pb-activity">Review process design</span><span class="pb-activity">Feedback loop analysis</span><span class="pb-activity">Improvement mechanism audit</span><span class="pb-activity">Internal capability workshops</span><span class="pb-activity">Self-assessment frameworks</span></div>
         <p class="pb-purpose">Purpose: Build the organizational capacity to keep improving so Bay Circle becomes unnecessary.</p>
       </div>
     </div>
-
   </div>
 
   <div class="method-cta-section">
@@ -482,14 +389,143 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
   </div>
 
   <footer class="footer">
-    <div>
-      <div class="footer-brand">Bay Circle Consulting</div>
-      <div class="footer-tagline">See the system. Change the outcome.</div>
-      <div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div>
+    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
+  </footer>
+</div>
+
+<!-- ═══════════ CASE STUDY ═══════════ -->
+<div class="page-view" id="page-casestudy">
+  <div class="case-hero">
+    <div class="section-label">Origin Case Study</div>
+    <h1 class="case-hero-headline">The origin of<br><em>the Seven Pillars</em></h1>
+    <p class="case-hero-sub">A foundational operational case study. The Seven Pillars of Invisible Management were not invented in theory. They were derived from direct experience inside a real, working organization.</p>
+    <div class="case-tags">
+      <span class="case-tag">Multi-location distribution</span>
+      <span class="case-tag">High-volume fulfillment</span>
+      <span class="case-tag">Operations & logistics</span>
     </div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;">
-      <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
+  </div>
+
+  <div class="case-body">
+
+    <div class="case-section">
+      <div class="case-section-label">Context</div>
+      <p class="case-p lead">This framework originated from experience within a multi-location distribution and operations environment, one characterized by high-volume order fulfillment, mixed manual and system-driven workflows, rapid growth across teams, heavy reliance on institutional knowledge, and constant tension between urgency and execution.</p>
+      <p class="case-p">On the surface, the organization functioned. Orders were fulfilled. Teams remained active. Daily execution continued. But underneath that surface, a different pattern was repeating: execution increasingly relied on informal knowledge, shifting priorities, and invisible workarounds rather than stable systems.</p>
     </div>
+
+    <div class="case-section">
+      <div class="case-section-label">What Was Observed</div>
+      <h2 class="case-section-title">Recurring patterns, regardless of effort</h2>
+      <p class="case-p">Over time, recurring operational patterns emerged regardless of effort, experience, or intent. These patterns were not isolated. They reinforced one another.</p>
+
+      <div class="case-subhead">Repeated operational breakdowns</div>
+      <p class="case-p">The same categories of issues resurfaced even after being addressed multiple times.</p>
+      <ul class="case-list">
+        <li>Delivery delays were resolved through routing adjustments, but similar delays reappeared in different contexts over time</li>
+        <li>Order accuracy issues improved after retraining, but re-emerged under time pressure or staffing changes</li>
+        <li>Documented process updates coexisted with older, informal versions still being used in practice</li>
+      </ul>
+
+      <div class="case-subhead">Dependence on specific individuals</div>
+      <p class="case-p">Critical knowledge and decision clarity often lived within a small number of people. When those individuals were unavailable, execution slowed or became fragmented.</p>
+      <ul class="case-list">
+        <li>Certain employees became default points of contact for pricing, exceptions, or routing decisions regardless of formal role</li>
+        <li>Absence of key managers created backlog in decisions that were normally routine</li>
+        <li>New employees often bypassed documentation and relied on informal guidance from experienced individuals</li>
+      </ul>
+
+      <div class="case-subhead">Uneven understanding of how work happens</div>
+      <p class="case-p">Different teams often held different interpretations of the same processes.</p>
+      <ul class="case-list">
+        <li>Sales worked from expected timelines, while operations worked from actual capacity constraints</li>
+        <li>The same task was executed differently depending on who trained the employee</li>
+        <li>Documented processes did not always match real-world execution on the floor or in routing decisions</li>
+      </ul>
+
+      <div class="case-subhead">Communication loss between intent and execution</div>
+      <p class="case-p">Decisions made at one level of the organization did not consistently translate into execution at another.</p>
+      <ul class="case-list">
+        <li>Standardization initiatives resulted in multiple interpretations across teams</li>
+        <li>Meeting decisions were clear in context but diluted in execution over time</li>
+        <li>Instructions lost detail, priority, or meaning as they moved through layers of communication</li>
+      </ul>
+
+      <div class="case-subhead">Firefighting as a default operating mode</div>
+      <p class="case-p">A significant portion of operational energy was spent responding to breakdowns rather than improving underlying systems.</p>
+      <ul class="case-list">
+        <li>Planned improvements were frequently interrupted by urgent operational issues</li>
+        <li>Teams paused structured work to address recurring but predictable problems</li>
+        <li>Day-to-day activity remained high, but forward progress was inconsistent</li>
+      </ul>
+    </div>
+
+    <div class="case-callout">
+      <p>The system was not struggling because of a lack of effort. It was struggling because key structural elements were not visible.</p>
+    </div>
+
+    <div class="case-section">
+      <div class="case-section-label">The Pattern Beneath the Surface</div>
+      <p class="case-p">These issues were not separate failures. They were expressions of the same underlying condition invisible structures shaping outcomes more than any individual action: how work actually flowed through the organization, where friction accumulated, where ownership was unclear, where knowledge was stored, where decisions slowed or changed shape, where execution diverged from intent.</p>
+    </div>
+
+    <div class="case-section">
+      <div class="case-section-label">The Emergence of the Seven Pillars</div>
+      <p class="case-p">From these recurring patterns, a structural model began to form, not as a redesign of the organization, but as a way to understand it. This became the Seven Pillars of Invisible Management: Observe the Flow, Identify Friction, Find the Root, Clarify Ownership, Reduce Cognitive Load, Protect Stability, and Renew the System.</p>
+      <p class="case-p">Each pillar represents a recurring category of system behavior observed across operational environments. Together, they form a lens for understanding how work actually moves through an organization.</p>
+    </div>
+
+    <div class="case-divider-full"></div>
+
+    <div class="case-section">
+      <div class="case-section-label">System Analysis Through the Seven Pillars</div>
+      <h2 class="case-section-title">Using the framework to evaluate the operation</h2>
+
+      <span class="case-pillar-tag" onclick="navigate('method')">Observe the Flow</span>
+      <p class="case-p">Initial assumptions attributed inefficiencies to execution at the operational level. However, tracing workflows from decision to delivery revealed that many constraints existed upstream of execution. Front-line performance was often not the limiting factor. The structure of decision-making and information flow was.</p>
+
+      <span class="case-pillar-tag" onclick="navigate('method')">Identify Friction &amp; Find the Root</span>
+      <p class="case-p">Recurring friction points consistently appeared in three areas: handoffs between roles, correction of incomplete or misaligned inputs, and variability introduced by inconsistent upstream decisions. The root issue was not isolated error, but structural ambiguity in how work moved through the system.</p>
+
+      <span class="case-pillar-tag" onclick="navigate('method')">Clarify Ownership &amp; Reduce Cognitive Load</span>
+      <p class="case-p">Several workflows lacked explicit ownership boundaries. Responsibility was often assumed rather than defined, leading to predictable drift toward the most reliable individuals. At the same time, key processes relied heavily on memory rather than shared systems, creating unnecessary cognitive load and uneven operational dependency.</p>
+      <p class="case-p">Interventions focused on making ownership explicit in recurring workflows, converting informal processes into simple, repeatable systems, and reducing reliance on individual memory as the primary operating model.</p>
+
+      <span class="case-pillar-tag" onclick="navigate('method')">Protect Stability &amp; Renew the System</span>
+      <p class="case-p">Once immediate instability was reduced, focus shifted toward preventing regression. A lightweight review loop was introduced to monitor where execution drifted from intended process, where ambiguity re-emerged in ownership or decision paths, and where informal workarounds began replacing defined systems. Over time, the system shifted away from reactive correction and toward structural maintenance.</p>
+    </div>
+
+    <div class="case-section">
+      <div class="case-section-label">System Outcome</div>
+      <p class="case-p">As invisible structural issues were surfaced and addressed, the operation became more predictable in execution.</p>
+      <ul class="case-list">
+        <li>Reduced dependency on individual memory for core processes</li>
+        <li>Improved clarity around ownership in recurring workflows</li>
+        <li>More consistent execution across teams and locations</li>
+        <li>Lower operational volatility during absences or staffing changes</li>
+      </ul>
+      <p class="case-p">The most meaningful shift was not speed or output. It was stability.</p>
+    </div>
+
+  </div>
+
+  <div class="case-closing">
+    <div class="case-closing-inner">
+      <p>"When those structures become visible, execution becomes more consistent, not because effort increases, but because friction decreases."</p>
+      <p class="small">The Seven Pillars exist to make that structure visible enough to work with deliberately.</p>
+    </div>
+  </div>
+
+  <div class="method-cta-section">
+    <h2 class="section-heading">See what's invisible in your organization</h2>
+    <p class="section-body">The first conversation is about understanding your situation not selling a solution.</p>
+    <button class="btn-primary" onclick="navigate('contact')">Start a conversation</button>
+  </div>
+
+  <footer class="footer">
+    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
@@ -522,15 +558,19 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
       <div><div class="value-num">04</div><div class="value-title">All three levels matter</div><div class="value-body">Leadership, management, and frontline employees see different realities. All three are necessary to understand the full system.</div></div>
     </div>
   </div>
+
+  <!-- BRIDGE TO CASE STUDY -->
+  <div class="about-bridge">
+    <div class="bridge-inner">
+      <div class="bridge-label">Where this came from</div>
+      <p class="bridge-text">The Seven Pillars were formed through direct operational experience inside real distribution environments — not built in theory, but observed firsthand.</p>
+      <button class="bridge-link" onclick="navigate('casestudy')">Read the origin case study →</button>
+    </div>
+  </div>
+
   <footer class="footer">
-    <div>
-      <div class="footer-brand">Bay Circle Consulting</div>
-      <div class="footer-tagline">See the system. Change the outcome.</div>
-      <div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;">
-      <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
-    </div>
+    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
@@ -586,14 +626,8 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
     </div>
   </div>
   <footer class="footer">
-    <div>
-      <div class="footer-brand">Bay Circle Consulting</div>
-      <div class="footer-tagline">See the system. Change the outcome.</div>
-      <div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;">
-      <button class="footer-cta" onclick="navigate('contact')">Start a conversation</button>
-    </div>
+    <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
