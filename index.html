@@ -73,6 +73,12 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .about-body { padding: 4.5rem var(--side); }
 .about-values { background: white; padding: 4.5rem var(--side); }
 .about-bridge { background: var(--navy-mid); padding: 4rem var(--side); }
+.about-founder { padding: 4.5rem var(--side); background: var(--navy); display: flex; gap: 3rem; align-items: flex-start; }
+.about-founder-photo { width: 120px; height: 120px; border-radius: 50%; background: rgba(200,169,110,0.15); border: 1px solid rgba(200,169,110,0.25); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; color: rgba(200,169,110,0.4); letter-spacing: 0.08em; }
+.about-founder-content { max-width: 600px; }
+.about-founder-content .section-label { margin-bottom: 1rem; }
+.about-founder-content .lorem-block { color: rgba(245,242,236,0.65); }
+@media (max-width: 600px) { .about-founder { flex-direction: column; } .about-founder-photo { width: 80px; height: 80px; } }
 .contact-hero { background: var(--navy); padding: 5rem var(--side) 4rem; }
 .contact-body { padding: 4.5rem var(--side); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
 .case-hero { background: var(--navy); padding: 5rem var(--side) 4rem; }
@@ -594,38 +600,56 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
 <!-- ═══════════ ABOUT ═══════════ -->
 <div class="page-view" id="page-about">
+
+  <!-- 1. WHY BAY CIRCLE EXISTS -->
   <div class="about-hero">
-    <div class="section-label">About Bay Circle</div>
-    <h1 class="about-hero-headline">Built on the belief that<br><em style="font-style:italic;color:var(--gold-light)">clarity precedes change</em></h1>
-    <p class="about-hero-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <div class="section-label">Why Bay Circle Exists</div>
+    <h1 class="about-hero-headline">Most problems are not unique.<br><em style="font-style:italic;color:var(--gold-light)">They are familiar patterns</em><br>not yet recognized.</h1>
+    <p class="about-hero-sub">Bay Circle exists because the work is not about fixing everything at once. It's about learning how to see what's actually happening clearly enough that the right problem becomes obvious, and the cycle stops repeating.</p>
   </div>
-  <div class="about-body"><div class="section-label">The founder</div>
-    <h2 class="section-heading">Placeholder — your story goes here</h2>
+
+  <!-- 2. ABOUT BAY CIRCLE -->
+  <div class="about-body">
+    <div class="section-label">About Bay Circle</div>
+    <h2 class="section-heading">The same patterns,<br>wearing different names</h2>
     <div class="about-grid">
       <div>
-        <p class="lorem-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="lorem-block">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="lorem-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p class="lorem-block">Different businesses look like they have different problems, but most operational issues are just the same underlying breakdowns wearing a different name. The language changes, the environment changes, and the people change, but the patterns repeat.</p>
+        <p class="lorem-block">In most organizations, these problems are explained through familiar stories: <em>"The team just isn't communicating."</em> <em>"People aren't following the process."</em> <em>"We just need better accountability."</em></p>
+        <p class="lorem-block">But these explanations sit one layer too shallow. They describe the symptom, not the structure producing it.</p>
+        <p class="lorem-block">Over years working inside different operational environments, I kept running into the same cycle: recurring friction, constant firefighting, miscommunication, and confusion over ownership. The details changed, but the underlying patterns didn't.</p>
+        <p class="lorem-block">At a certain point, I stopped treating each issue as isolated and started looking at how problems were forming in the first place. That shift became the foundation for what would eventually become the Seven Pillars of Invisible Management.</p>
+        <p class="lorem-block">The framework exists to bridge a simple gap: the difference between how work is described inside an organization, and how it actually moves through it.</p>
+        <p class="lorem-block">Most operational issues are not solved by working harder, adding more oversight, or reacting faster. They're solved by developing the visibility to understand what is actually driving them.</p>
+        <p class="lorem-block">When that visibility improves, the impact is simple but noticeable: recurring problems stop resurfacing in different forms, ownership becomes clearer, and teams spend less time reacting and more time executing.</p>
+        <p class="lorem-block">My focus has never been on becoming a permanent part of a business. The goal is to help leadership teams build the ability to recognize, investigate, and solve these structural patterns on their own, long after I'm gone.</p>
       </div>
-      <div class="about-photo-placeholder"><span>Photo placeholder</span></div>
-    </div>
-  </div>
-  <div class="about-values"><div class="section-label">What we believe</div>
-    <h2 class="section-heading">The principles behind the work</h2>
-    <div class="values-grid">
-      <div><div class="value-num">01</div><div class="value-title">Clarity before change</div><div class="value-body">No organization should try to fix what it cannot yet see. Understanding must come before intervention.</div></div>
-      <div><div class="value-num">02</div><div class="value-title">People are rarely the problem</div><div class="value-body">Most dysfunction is systemic. Blaming individuals is usually wrong and always unhelpful.</div></div>
-      <div><div class="value-num">03</div><div class="value-title">Independence over dependency</div><div class="value-body">A successful engagement ends with the client not needing us for the same problem again.</div></div>
-      <div><div class="value-num">04</div><div class="value-title">All three levels matter</div><div class="value-body">Leadership, management, and frontline employees see different realities. All three are necessary to understand the full system.</div></div>
     </div>
   </div>
 
-  <!-- BRIDGE TO CASE STUDY -->
+  <!-- 3. WHAT THIS WORK CHANGES -->
+  <div class="about-values">
+    <div class="section-label">What This Work Changes</div>
+    <h2 class="section-heading">The impact of the framework</h2>
+    <p class="lorem-block" style="color:rgba(0,0,0,0.35); font-style:italic;">Impact and results content coming soon.</p>
+  </div>
+
+  <!-- 4. WHERE THIS CAME FROM -->
   <div class="about-bridge">
     <div class="bridge-inner">
       <div class="bridge-label">Where this came from</div>
       <p class="bridge-text">The Seven Pillars were formed through direct operational experience inside real distribution environments — not built in theory, but observed firsthand.</p>
       <button class="bridge-link" onclick="navigate('casestudy')">Read the origin case study →</button>
+    </div>
+  </div>
+
+  <!-- 5. FOUNDER -->
+  <div class="about-founder">
+    <div class="about-founder-photo"><span>Photo</span></div>
+    <div class="about-founder-content">
+      <div class="section-label">Bay Circle Consulting, Founder</div>
+      <p class="lorem-block">Placeholder — a few lines about yourself, your background, and what drew you to this work will go here.</p>
+      <p class="lorem-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
   </div>
 
