@@ -89,8 +89,8 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .pillars-teaser { background: var(--navy); padding: 4.5rem 3rem; }
 .pillars-teaser .section-heading { color: var(--linen); margin-bottom: 0.8rem; }
 .pillars-teaser .section-body { color: rgba(245,242,236,0.55); margin-bottom: 3rem; max-width: 560px; }
-.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(200,169,110,0.15); }
-.pillar-teaser-card { background: var(--navy); padding: 1.6rem 1.8rem; cursor: pointer; transition: background 0.2s; display: flex; gap: 1.2rem; align-items: flex-start; }
+.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; background: var(--navy); }
+.pillar-teaser-card { background: var(--navy); padding: 1.6rem 1.8rem; cursor: pointer; transition: background 0.2s; display: flex; gap: 1.2rem; align-items: flex-start; border: 1px solid rgba(200,169,110,0.15); margin: -1px -1px 0 0; }
 .pillar-teaser-card:hover { background: rgba(255,255,255,0.025); }
 .ptc-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: rgba(200,169,110,0.3); line-height: 1; min-width: 1.8rem; padding-top: 0.1rem; }
 .ptc-title { font-size: 0.8rem; font-weight: 500; color: var(--gold-light); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 0.35rem; }
@@ -222,7 +222,8 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
     <a onclick="navigate('casestudy')" data-page="casestudy">Case Study</a>
     <a onclick="navigate('about')" data-page="about">About</a>
     <a onclick="navigate('contact')" data-page="contact">Contact</a>
-  </div></div></nav>
+  </div>
+</nav>
 
 <!-- ═══════════ HOME ═══════════ -->
 <div class="page-view active" id="page-home">
@@ -239,12 +240,12 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
     <div class="hero-canvas-wrap"><canvas id="systemMap"></canvas></div>
   </section>
 
-  <div class="belief-strip"><p>"You cannot improve what you cannot see. Clarity comes before change."</p></div></div>
+  <div class="belief-strip"><p>"You cannot improve what you cannot see. Clarity comes before change."</p></div>
 
   <section class="section" id="home-problems" style="background:var(--linen);"><div class="section-label">The problem</div>
     <h2 class="section-heading">Organizations don't break overnight.<br>They drift.</h2>
     <p class="section-body">Good people. Clear intentions. Hard work. And still the same problems recur, the same bottlenecks reappear, the same miscommunications stall progress. The issue is rarely the people. It's the invisible systems surrounding them: unclear ownership, undocumented assumptions, gaps between how work is supposed to flow and how it actually does.</p>
-    <p class="section-body" style="margin-top:1.2rem;">Bay Circle doesn't assign blame. We reveal the terrain.</p></div>
+    <p class="section-body" style="margin-top:1.2rem;">Bay Circle doesn't assign blame. We reveal the terrain.</p>
   </section>
 
   <section class="problems-section"><div class="section-label">Sound familiar?</div>
@@ -257,7 +258,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
       <div class="problem-card"><strong>Communication breakdowns</strong><p>Leadership believes one thing is happening. Employees experience something different. Everyone is acting on incomplete information, and nobody realizes it until something breaks.</p></div>
       <div class="problem-card"><strong>Execution gaps</strong><p>The meeting was productive. Everyone agreed on next steps. A month later, very little has changed and nobody can explain exactly why.</p></div>
       <div class="problem-card"><strong>Firefighting culture</strong><p>Every day feels urgent. Managers spend more time responding to problems than preventing them. The organization becomes highly reactive, even when everyone is working hard.</p></div>
-    </div></div>
+    </div>
   </section>
 
   <section class="how-it-works"><div class="how-it-works-label">How this works</div>
@@ -285,7 +286,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <div class="hiw-step-title">Build lasting clarity</div>
         <div class="hiw-step-desc">You leave with the ability to see and improve your systems independently</div>
       </div>
-    </div></div>
+    </div>
   </section>
 
   <section class="pillars-teaser"><div class="section-label">The Seven Pillars</div>
@@ -319,7 +320,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
   <footer class="footer">
     <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
@@ -329,7 +330,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
     <h1 class="method-hero-headline">The Seven Pillars of<br><em>Invisible Management</em></h1>
     <p class="method-hero-sub">Most organizations try to solve problems before they understand them. The Seven Pillars are a diagnostic framework for seeing an organization clearly, not as it is documented, but as it actually operates. Every Bay Circle engagement is a guided application of this framework. Every chapter of the book is an exploration of one pillar.</p>
     <div class="method-hero-book"><span>Framework also explored in</span><strong>The Invisible Work of Management</strong></div>
-    <span class="method-hero-case" onclick="navigate('casestudy')">See where this came from — the origin case study →</span></div>
+    <span class="method-hero-case" onclick="navigate('casestudy')">See where this came from — the origin case study →</span>
   </div>
 
   <div class="pillar-full">
@@ -444,7 +445,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
         <p class="pb-purpose">Purpose: Build the organizational capacity to keep improving so Bay Circle becomes unnecessary.</p>
       </div>
     </div>
-  </div></div>
+  </div>
 
   <div class="method-cta-section">
     <h2 class="section-heading">Ready to see your organization clearly?</h2>
@@ -454,11 +455,9 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
   <footer class="footer">
     <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
-
-<!-- ═══════════ CASE STUDY ═══════════ -->
 <div class="page-view" id="page-casestudy">
   <div class="case-hero">
     <div class="section-label">Origin Case Study</div>
@@ -579,17 +578,16 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
       <p>"When those structures become visible, execution becomes more consistent, not because effort increases, but because friction decreases."</p>
       <p class="small">The Seven Pillars exist to make that structure visible enough to work with deliberately.</p>
     </div>
-  </div></div>
+  </div>
 
   <div class="method-cta-section">
-    <h2 class="section-heading">See what's invisible in your organization</h2>
     <p class="section-body">The first conversation is about understanding your situation not selling a solution.</p>
     <button class="btn-primary" onclick="navigate('contact')">Start a conversation</button>
   </div>
 
   <footer class="footer">
     <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
@@ -632,7 +630,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
   <footer class="footer">
     <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
@@ -687,7 +685,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
   </div>
   <footer class="footer">
     <div><div class="footer-brand">Bay Circle Consulting</div><div class="footer-tagline">See the system. Change the outcome.</div><div class="footer-copy">© 2025 Bay Circle Consulting · Charleston, South Carolina</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;"><button class="footer-cta" onclick="navigate('contact')">Start a conversation</button></div>
   </footer>
 </div>
 
