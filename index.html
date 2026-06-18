@@ -2,7 +2,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --navy: #0B1A2C; --navy-mid: #1A3A5C; --gold: #C8A96E; --gold-light: #E2CAAA;
+  --navy: #0B1A2C; --navy-mid: #1A3A5C; --gold: #C8A96E; --gold-light: #E2CAAA; --gold-dark: #8B6914;
   --steel: #6B8FA3; --linen: #F5F2EC; --sand: #EAE5DB; --body: #2D3E4E; --muted: #6B7E8F;
 }
 body { background: transparent; }
@@ -31,7 +31,17 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 .belief-strip { background: var(--navy-mid); padding: 2rem 3rem; border-top: 1px solid rgba(200,169,110,0.2); border-bottom: 1px solid rgba(200,169,110,0.2); }
 .belief-strip p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; font-style: italic; color: var(--gold-light); text-align: center; line-height: 1.6; }
 .section { padding: 4.5rem 3rem; }
-.section-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.section-label { font-size: 0.72rem; font-weight: 600; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.2rem; }
+
+/* On light backgrounds (linen, sand, white), use darker gold for readability */
+.section .section-label,
+.problems-section .section-label,
+.positioning-section .section-label,
+.pillar-full .section-label,
+.about-body .section-label,
+.about-values .section-label,
+.contact-body .section-label,
+.case-body .section-label,
 .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,3.5vw,2.5rem); font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 1.2rem; }
 .section-body { font-size: 0.95rem; font-weight: 300; color: var(--body); line-height: 1.85; max-width: 580px; }
 .btn-outline-gold { background: transparent; border: 1px solid rgba(200,169,110,0.5); color: var(--gold-light); padding: 0.75rem 2rem; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
@@ -196,7 +206,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
 
 .case-body { padding: 4.5rem 3rem 1rem; background: var(--linen); max-width: 760px; margin: 0 auto; }
 .case-section { margin-bottom: 3.5rem; }
-.case-section-label { font-size: 0.68rem; font-weight: 500; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1rem; }
+.case-section-label { font-size: 0.72rem; font-weight: 600; color: var(--gold-dark); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1rem; }
 .case-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--navy); margin-bottom: 1.3rem; line-height: 1.25; }
 .case-p { font-size: 0.93rem; font-weight: 300; color: var(--body); line-height: 1.9; margin-bottom: 1.1rem; }
 .case-p.lead { font-size: 1rem; }
@@ -571,18 +581,6 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
       <p class="case-p">The most meaningful shift was not speed or output. It was stability.</p>
     </div>
 
-  </div>
-
-  <div class="case-closing">
-    <div class="case-closing-inner">
-      <p>"When those structures become visible, execution becomes more consistent, not because effort increases, but because friction decreases."</p>
-      <p class="small">The Seven Pillars exist to make that structure visible enough to work with deliberately.</p>
-    </div>
-  </div>
-
-  <div class="method-cta-section">
-    <p class="section-body">The first conversation is about understanding your situation not selling a solution.</p>
-    <button class="btn-primary" onclick="navigate('contact')">Start a conversation</button>
   </div>
 
   <footer class="footer">
