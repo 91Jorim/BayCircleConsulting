@@ -641,11 +641,11 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
   <div class="contact-body"><div>
       <div id="contact-form-area">
         <div class="form-row"><label class="form-label">Your name</label><input class="form-input" type="text" id="cf-name" placeholder="First and last name"></div>
-        <div class="form-row"><label class="form-label">Organization</label><input class="form-input" type="text" placeholder="Company or organization name"></div>
+        <div class="form-row"><label class="form-label">Organization</label><input class="form-input" type="text" id="cf-org" placeholder="Company or organization name"></div>
         <div class="form-row"><label class="form-label">Email address</label><input class="form-input" type="email" id="cf-email" placeholder="you@company.com"></div>
         <div class="form-row">
           <label class="form-label">What's happening?</label>
-          <select class="form-select">
+          <select class="form-select" id="cf-situation">
             <option value="">Select the closest description</option>
             <option>We're growing faster than our systems can handle</option>
             <option>The same problems keep recurring</option>
@@ -656,7 +656,7 @@ canvas#systemMap { position: absolute; top:0; left:0; width:100%; height:100%; }
             <option>Other</option>
           </select>
         </div>
-        <div class="form-row"><label class="form-label">Tell me more</label><textarea class="form-textarea" placeholder="A brief description of what's going on and what you've already tried..."></textarea></div>
+        <div class="form-row"><label class="form-label">Tell me more</label><textarea class="form-textarea" id="cf-message" placeholder="A brief description of what's going on and what you've already tried..."></textarea></div>
         <button class="form-submit" onclick="submitForm()">Send message</button>
         <p class="form-note">I respond to every inquiry personally, typically within one business day.</p>
       </div>
@@ -702,12 +702,35 @@ function scrollToId(id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-function submitForm() {
+async function submitForm() {
   const name = document.getElementById('cf-name').value.trim();
   const email = document.getElementById('cf-email').value.trim();
+  const org = document.getElementById('cf-org').value.trim();
+  const situation = document.getElementById('cf-situation').value;
+  const message = document.getElementById('cf-message').value.trim();
   if (!name || !email) { alert('Please fill in your name and email address.'); return; }
-  document.getElementById('contact-form-area').style.display = 'none';
-  document.getElementById('form-success').classList.add('show');
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/maqzzzez', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, organization: org, situation, message })
+    });
+    if (res.ok) {
+      document.getElementById('contact-form-area').style.display = 'none';
+      document.getElementById('form-success').classList.add('show');
+    } else {
+      btn.textContent = 'Send message';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email BayCircleConsulting@protonmail.com directly.');
+    }
+  } catch(e) {
+    btn.textContent = 'Send message';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email BayCircleConsulting@protonmail.com directly.');
+  }
 }
 function initMap() {
   const canvas = document.getElementById('systemMap');
